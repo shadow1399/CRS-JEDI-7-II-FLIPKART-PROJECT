@@ -4,7 +4,7 @@ public class Student extends User{
 	private String rollNo;
 	private int semester;
 	private String branch;
-	private boolean isVerified;
+	private int isVerified;
 	public String getRollNo() {
 		return rollNo;
 	}
@@ -23,11 +23,19 @@ public class Student extends User{
 	public void setBranch(String branch) {
 		this.branch = branch;
 	}
-	public boolean isVerified() {
+	
+	/**
+	 * @return the isVerified
+	 */
+	public int getIsVerified() {
 		return isVerified;
 	}
-	public void setVerified(boolean isVerified) {
+	/**
+	 * @param isVerified the isVerified to set
+	 */
+	public void setIsVerified(int isVerified) {
 		this.isVerified = isVerified;
 	}
+	
 	
 }

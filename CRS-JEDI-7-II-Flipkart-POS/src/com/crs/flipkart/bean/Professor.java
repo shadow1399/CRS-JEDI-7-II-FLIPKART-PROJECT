@@ -1,13 +1,13 @@
 package com.crs.flipkart.bean;
 
 public class Professor extends User{
-	private String profId;
+	private String professorId;
 	private String department;
-	public String getProfId() {
-		return profId;
+	public String getProfessorId() {
+		return professorId;
 	}
-	public void setProfId(String profId) {
-		this.profId = profId;
+	public void setProfessorId(String professorId) {
+		this.professorId = professorId;
 	}
 	public String getDepartment() {
 		return department;
