@@ -1,11 +1,63 @@
 package com.crs.flipkart.bean;
 
 public class Payment {
+	
+	
 	private String paymentId;
 	private String rollNo;
 	private float pAmout;
 	private boolean pStatus;
 	private String pType;
+	private String notificationId;
+	private int semester;
+	
+	/**
+	 * @param paymentId
+	 * @param rollNo
+	 * @param pAmout
+	 * @param pStatus
+	 * @param pType
+	 * @param notificationId
+	 * @param semester
+	 */
+	public Payment(String paymentId, String rollNo, float pAmout, boolean pStatus, String pType, String notificationId,
+			int semester) {
+		super();
+		this.paymentId = paymentId;
+		this.rollNo = rollNo;
+		this.pAmout = pAmout;
+		this.pStatus = pStatus;
+		this.pType = pType;
+		this.notificationId = notificationId;
+		this.semester = semester;
+	}
+	
+	/**
+	 * @return the semester
+	 */
+	public int getSemester() {
+		return semester;
+	}
+	/**
+	 * @param semester the semester to set
+	 */
+	public void setSemester(int semester) {
+		this.semester = semester;
+	}
+	
+	/**
+	 * @return the notificationId
+	 */
+	public String getNotificationId() {
+		return notificationId;
+	}
+	/**
+	 * @param notificationId the notificationId to set
+	 */
+	public void setNotificationId(String notificationId) {
+		this.notificationId = notificationId;
+	}
+	
 	public String getPaymentId() {
 		return paymentId;
 	}
