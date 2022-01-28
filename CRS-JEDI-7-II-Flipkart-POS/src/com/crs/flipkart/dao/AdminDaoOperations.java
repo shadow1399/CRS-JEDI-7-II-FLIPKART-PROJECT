@@ -9,6 +9,7 @@ import java.util.List;
 import com.crs.flipkart.bean.Course;
 import com.crs.flipkart.bean.Professor;
 import com.crs.flipkart.bean.Student;
+import com.crs.flipkart.constants.SQLQueryConstants;
 import com.crs.flipkart.utils.DBUtils;
 
 /**
@@ -25,9 +26,9 @@ public class AdminDaoOperations implements AdminDaoInterface {
 		// TODO Auto-generated method stub
 		try {
 //			System.out.println(courseId);
-			 String sql="delete from course where courseId=?";
+//			 String sql="delete from course where courseId=?";
 			 
-			 statement=connection.prepareStatement(sql);
+			 statement=connection.prepareStatement(SQLQueryConstants.DROP_COUSRE_QUERY);
 			 statement.setString(1, courseId);
 			 
 			 
@@ -47,9 +48,9 @@ public class AdminDaoOperations implements AdminDaoInterface {
 		List<Course> courses=new ArrayList<Course>();
 		
 		try {
-			 String sql="select * from course";
+//			 String sql="select * from course";
 			 
-			 statement=connection.prepareStatement(sql);
+			 statement=connection.prepareStatement(SQLQueryConstants.GET_COURSE_QUERY);
 			 
 			 ResultSet listCourses=statement.executeQuery();
 			 
@@ -78,9 +79,9 @@ public class AdminDaoOperations implements AdminDaoInterface {
 		List<Student> students=new ArrayList<Student>();
 		
 		try {
-			 String sql="select * from student";
+//			 String sql="select * from student";
 			 
-			 statement=connection.prepareStatement(sql);
+			 statement=connection.prepareStatement(SQLQueryConstants.GET_STUDENT_QUERY);
 			 
 			 ResultSet listStudents=statement.executeQuery();
 			 
@@ -108,9 +109,10 @@ public class AdminDaoOperations implements AdminDaoInterface {
 		List<Professor> professors=new ArrayList<Professor>();
 		
 		try {
-			 String sql="select * from professor";
+//			 String sql="select * from professor";
+			
 			 
-			 statement=connection.prepareStatement(sql);
+			 statement=connection.prepareStatement(SQLQueryConstants.GET_PROFESSOR_QUERY);
 			 
 			 ResultSet listProfessors=statement.executeQuery();
 			 
@@ -136,9 +138,9 @@ public class AdminDaoOperations implements AdminDaoInterface {
 		// TODO Auto-generated method stub
 		try {
 			
-			 String sql="update student set isVerified=1 where rollNo=?";
+//			 String sql="update student set isVerified=1 where rollNo=?";
 			 
-			 statement=connection.prepareStatement(sql);
+			 statement=connection.prepareStatement(SQLQueryConstants.APPROVE_STUDENT_QUERY);
 			 statement.setString(1, rollNo);
 			 
 			 
@@ -164,9 +166,10 @@ public class AdminDaoOperations implements AdminDaoInterface {
 	
 	public void addCourse(Course course) {
 		try {
-			 String sql="insert into course values(?,?,?,?)";
+//			 String sql="insert into course values(?,?,?,?)";
+				
 			 
-			 statement=connection.prepareStatement(sql);
+			 statement=connection.prepareStatement(SQLQueryConstants.ADD_COURSE_QUERY);
 			 statement.setString(1, course.getCourseId());
 			 statement.setString(2, course.getCourseName());
 			 statement.setString(3, course.getProfessorId());
