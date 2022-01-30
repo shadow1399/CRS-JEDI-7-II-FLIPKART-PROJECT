@@ -17,8 +17,8 @@ import com.crs.flipkart.bean.Course;
 import com.crs.flipkart.bean.Payment;
 import com.crs.flipkart.bean.ReportCard;
 import com.crs.flipkart.utils.DBUtils;
-import com.flipkart.dao.AdminDaoInterface;
-import com.flipkart.dao.AdminDaoOperation;
+import com.crs.flipkart.dao.AdminDaoInterface;
+import com.crs.flipkart.dao.AdminDaoOperations;
 import com.crs.flipkart.constants.SQLQueriesConstants;
 import com.crs.flipkart.dao.RegistrationDaoOperations;
 

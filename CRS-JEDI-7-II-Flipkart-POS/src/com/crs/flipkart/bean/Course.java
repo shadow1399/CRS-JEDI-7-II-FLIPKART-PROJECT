@@ -13,6 +13,9 @@ public class Course {
 	 * @param professorId
 	 * @param numberOfStudents
 	 */
+	public Course() {
+		
+	}
 	public Course(String courseName, String courseId, String professorId, int numberOfStudents) {
 		super();
 		this.courseName = courseName;

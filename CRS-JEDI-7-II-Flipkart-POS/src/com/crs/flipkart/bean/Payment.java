@@ -12,6 +12,13 @@ public class Payment {
 	private int semester;
 	
 	/**
+	 *Default Constructor 
+	 */
+	
+	public Payment() {
+		
+	}
+	/**
 	 * @param paymentId
 	 * @param rollNo
 	 * @param pAmout

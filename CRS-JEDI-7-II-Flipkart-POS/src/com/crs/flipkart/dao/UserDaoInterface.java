@@ -1,6 +1,13 @@
-package com.crs.flipkart.business;
+/**
+ * 
+ */
+package com.crs.flipkart.dao;
 
-public interface UserInterface {
+/**
+ * @author YASH
+ *
+ */
+public interface UserDaoInterface {
 	public boolean verifyCredentials(String email,String password);
 	
 	public boolean updatePassword(String email,String password);

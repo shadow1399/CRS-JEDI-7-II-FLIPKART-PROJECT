@@ -121,6 +121,7 @@ public class AdminDaoOperations implements AdminDaoInterface {
 				 Professor professor=new Professor();
 				 professor.setProfessorId(listProfessors.getString("professorId"));
 				 professor.setDepartment(listProfessors.getString("department"));
+				 professor.setName(listProfessors.getString("name"));
 				 
 				 professors.add(professor);
 				 
@@ -146,7 +147,7 @@ public class AdminDaoOperations implements AdminDaoInterface {
 			 
 			 
 			 statement.executeUpdate();
-			 System.out.println("Student Approved Successfully!!");
+			 System.out.println("Student having "+rollNo+" Approved Successfully!!");
 			 
 		}catch(Exception e) {
 			System.out.println(e);
@@ -159,7 +160,9 @@ public class AdminDaoOperations implements AdminDaoInterface {
 	@Override
 	public void generateReportCard(int semester) {
 		// TODO Auto-generated method stub
-		System.out.println("Generated Report Card for Semester "+semester);
+//		System.out.println("Generated Report Card for Semester "+semester);
+		
+		
 	}
 
 	
