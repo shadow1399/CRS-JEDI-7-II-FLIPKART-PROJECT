@@ -19,10 +19,8 @@ public interface RegistrationDaoInterface {
 	 * @param courseCode
 	 * @param studentId
 	 * @return boolean indicating if the course is added successfully
-	 * @throws SQLException
-	 * @throws CourseNotFoundException 
 	 */
-	public boolean addCourse(String courseId, String studentId, int semester);
+	public boolean addCourse(String courseId, String studentId, int semester) throws SQLException;
 	
 	/**
 	 * Drop Course selected by student
@@ -31,7 +29,7 @@ public interface RegistrationDaoInterface {
 	 * @param studentId
 	 * @return boolean indicating if the course is dropped successfully
 	 */
-	public boolean removeCourse(String courseId, String studentId, int semester);
+	public boolean removeCourse(String courseId, String studentId, int semester) throws SQLException;
 	
 	/**
 	 * Method to get the list of courses available from course catalog
@@ -39,7 +37,7 @@ public interface RegistrationDaoInterface {
 	 * @param studentId
 	 * @return list of Courses
 	 */
-	public List<Course> viewCourses(String studentId, int semester);
+	public List<Course> viewCourses(String studentId, int semester) throws SQLException;
 	
 	/**
 	 * Method to View list of Registered Courses
@@ -47,7 +45,7 @@ public interface RegistrationDaoInterface {
 	 * @param studentId
 	 * @return list of Registered Courses
 	 */
-	public List<Course> viewRegisteredCourses(String studentId, int semester);
+	public List<Course> viewRegisteredCourses(String studentId, int semester) throws SQLException;
 	
 	/**
 	 * Method to view grade card of the student
@@ -55,7 +53,7 @@ public interface RegistrationDaoInterface {
 	 * @param studentId
 	 * @return Grade Card
 	 */
-	public ReportCard viewReportCard(String studentId, int semester);
+	public ReportCard viewReportCard(String studentId, int semester) throws SQLException;
 	
 	/**
 	 * Method to retrieve fee for the selected courses from the database and
@@ -64,11 +62,50 @@ public interface RegistrationDaoInterface {
 	 * @param studentId
 	 * @return Fee Student has to pay
 	 */
-	public boolean payFee(Payment payment);
+	public boolean payFee(Payment payment) throws SQLException;
 	
 	 /**
-	 * Method to check whether the given student has paid the fee or not
-	 * for given sem
+	  * 
+	  * @param studentId
+	  * @param semester
+	  * @return
+	  * @throws SQLException
+	  */
+	public Payment viewFee(String studentId,int semester) throws SQLException;
+	
+	/**
+	 * 
+	 * @param studentId
+	 * @param semester
+	 * @return
+	 * @throws SQLException
 	 */
-	public Payment viewFee(String studentId,int semester);
+	public int numOfRegisteredCourses(String studentId, int semester) throws SQLException;
+	
+	/**
+	 * 
+	 * @param courseCode
+	 * @param studentId
+	 * @param semester
+	 * @return
+	 * @throws SQLException
+	 */
+	public boolean isRegistered(String courseCode, String studentId, int semester) throws SQLException;
+	
+	/**
+	 * 
+	 * @param courseId
+	 * @return
+	 * @throws SQLException
+	 */
+	public boolean isValidCourse(String courseId) throws SQLException;
+	
+	/**
+	 * 
+	 * @param studentId
+	 * @param semester
+	 * @return
+	 * @throws SQLException
+	 */
+	public boolean isPaymentExist(String studentId,int semester) throws SQLException;
 }

@@ -55,7 +55,7 @@ public class RegistrationDaoOperations implements RegistrationDaoInterface {
 	
 	
 	@Override
-	public boolean addCourse(String courseId, String studentId, int semester) {
+	public boolean addCourse(String courseId, String studentId, int semester) throws SQLException {
 		Connection conn = DBUtils.getConnection();
 
 		try {
@@ -78,7 +78,7 @@ public class RegistrationDaoOperations implements RegistrationDaoInterface {
 	}
 
 	@Override
-	public boolean removeCourse(String courseId, String studentId, int semester) {
+	public boolean removeCourse(String courseId, String studentId, int semester) throws SQLException {
 		Connection conn = DBUtils.getConnection();
 
 		try {
@@ -99,7 +99,7 @@ public class RegistrationDaoOperations implements RegistrationDaoInterface {
 			stmt.close();
 
 			return true;
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			logger.error(e.getMessage());
 		} 
 
@@ -107,7 +107,7 @@ public class RegistrationDaoOperations implements RegistrationDaoInterface {
 	}
 
 	@Override
-	public List<Course> viewCourses(String studentId, int semester) {
+	public List<Course> viewCourses(String studentId, int semester) throws SQLException {
 		List<Course> availableCourseList = new ArrayList<>();
 		Connection conn = DBUtils.getConnection();
 
@@ -123,7 +123,7 @@ public class RegistrationDaoOperations implements RegistrationDaoInterface {
 								queryResult.getString("professorId"), queryResult.getInt("numberOfStudents")));
 			}
 
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			logger.error(e.getMessage());
 		} 
 
@@ -131,7 +131,7 @@ public class RegistrationDaoOperations implements RegistrationDaoInterface {
 	}
 
 	@Override
-	public List<Course> viewRegisteredCourses(String studentId, int semester) {
+	public List<Course> viewRegisteredCourses(String studentId, int semester) throws SQLException {
 		Connection conn = DBUtils.getConnection();
 		List<Course> registeredCourseList = new ArrayList<>();
 		try {
@@ -146,7 +146,7 @@ public class RegistrationDaoOperations implements RegistrationDaoInterface {
 						rs.getString("ProfessorId"), rs.getInt("numberOfStudents")));
 
 			}
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			logger.error(e.getMessage());
 		} 
 
@@ -154,7 +154,7 @@ public class RegistrationDaoOperations implements RegistrationDaoInterface {
 	}
 
 	@Override
-	public ReportCard viewReportCard(String studentId, int semester) {
+	public ReportCard viewReportCard(String studentId, int semester) throws SQLException {
 		Connection conn = DBUtils.getConnection();
 		ReportCard reportCard = null;
 		try {
@@ -164,14 +164,14 @@ public class RegistrationDaoOperations implements RegistrationDaoInterface {
 			ResultSet queryResult = stmt.executeQuery();
 			// TODO : Some code regarding Viewing grades.
 
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			logger.error(e.getMessage());
 		} 
 		return reportCard;
 	}
 
 	@Override
-	public boolean payFee(Payment payment) {
+	public boolean payFee(Payment payment) throws SQLException {
 		Connection conn = DBUtils.getConnection();
 		try {
 			stmt = conn.prepareStatement(SQLQueriesConstants.INSERT_PAYMENT);
@@ -184,7 +184,7 @@ public class RegistrationDaoOperations implements RegistrationDaoInterface {
 			stmt.execute();
 			return true;
 
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			logger.error(e.getMessage());
 		} 
 		
@@ -192,7 +192,7 @@ public class RegistrationDaoOperations implements RegistrationDaoInterface {
 	}
 
 	@Override
-	public Payment viewFee(String studentId, int semester) {
+	public Payment viewFee(String studentId, int semester) throws SQLException {
 		Connection conn = DBUtils.getConnection();
 		try {
 			stmt = conn.prepareStatement(SQLQueriesConstants.VIEW_PAYMENT);
@@ -209,6 +209,50 @@ public class RegistrationDaoOperations implements RegistrationDaoInterface {
 			logger.error(e.getMessage());
 		}
 		return null;
+	}
+
+	@Override
+	public int numOfRegisteredCourses(String studentId, int semester) throws SQLException {
+		Connection conn = DBUtils.getConnection();
+		
+		int count = 0;
+		try {
+
+			stmt = conn.prepareStatement(SQLQueriesConstants.NUMBER_OF_REGISTERED_COURSES);
+			stmt.setString(1, studentId);
+			stmt.setInt(2,  semester);
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				count++;
+			}
+			return count;
+
+		}
+		catch (SQLException e)
+		{
+			
+			logger.error("");
+		}
+		
+		return count;
+	}
+
+	@Override
+	public boolean isRegistered(String courseCode, String studentId, int semester) throws SQLException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isValidCourse(String courseId) throws SQLException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isPaymentExist(String studentId, int semester) throws SQLException {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

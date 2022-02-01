@@ -12,7 +12,7 @@ import com.crs.flipkart.business.UserServices;
  * @author YASH
  *
  */
-public class CRSMenu {
+public class CRSApplicationMenu {
 
 	/**
 	 * @param args
@@ -62,6 +62,8 @@ public class CRSMenu {
 		System.out.print("ENTER YOUR CHOICE----->:\t");
 
 	}
+	
+	
 	/*
 	 *Student signup function 
 	 * 
@@ -129,7 +131,7 @@ public class CRSMenu {
 				switch (userType) {
 					case "ADMIN":
 						System.out.println(" Login Successful!");
-						AdminMenu adminMenu = new AdminMenu();
+						CRSAdminMenu adminMenu = new CRSAdminMenu();
 						adminMenu.createMenu();
 						break;
 	//				case "PROFESSOR":

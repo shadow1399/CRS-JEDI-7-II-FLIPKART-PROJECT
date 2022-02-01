@@ -15,7 +15,7 @@ import com.crs.flipkart.business.AdminServices;
  * @author YASH
  *
  */
-public class AdminMenu {
+public class CRSAdminMenu {
 
 	/**
 	 * @param args
