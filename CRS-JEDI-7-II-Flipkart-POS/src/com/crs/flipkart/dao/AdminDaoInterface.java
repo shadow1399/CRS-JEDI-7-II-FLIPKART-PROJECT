@@ -8,6 +8,8 @@ import java.util.List;
 import com.crs.flipkart.bean.Course;
 import com.crs.flipkart.bean.Professor;
 import com.crs.flipkart.bean.Student;
+import com.crs.flipkart.exceptions.AddCourseException;
+import com.crs.flipkart.exceptions.CourseNotFoundException;
 
 /**
  * @author SATYANSH
@@ -18,14 +20,16 @@ public interface AdminDaoInterface {
 	/**
 	 * Add course to the course table in DB
 	 * @param course
+	 * @throws AddCourseException 
 	 */
-	public boolean addCourse(Course course);
+	public boolean addCourse(Course course) throws AddCourseException;
 	
 	/**
 	 * Drop course from the course table in DB
 	 * @param courseId
+	 * @throws CourseNotFoundException 
 	 */
-	public boolean dropCourse(String courseId);
+	public boolean dropCourse(String courseId) throws CourseNotFoundException;
 	
 	/**
 	 * Fetch all the courses available in the course table in DB

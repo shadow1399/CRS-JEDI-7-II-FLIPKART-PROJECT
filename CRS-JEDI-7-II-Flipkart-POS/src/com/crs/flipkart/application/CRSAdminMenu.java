@@ -256,10 +256,10 @@ public class CRSAdminMenu {
 			
 			
 			List<Course> availableCourses=adminInterface.getCourses();
-			System.out.println(String.format("%20s %20s %20s","COURSE ID","COURSE NAME","STUDENTS REGISTERED" ));
+			System.out.println(String.format("%20s %20s %20s %20s","COURSE ID","COURSE NAME","PROFESSOR ID","STUDENTS REGISTERED" ));
 			for(Course obj: availableCourses)
 			{
-				System.out.println(String.format("%20s %20s %20s",obj.getCourseId(), obj.getCourseName(),obj.getNumberOfStudents()));
+				System.out.println(String.format("%20s %20s %20s %20s",obj.getCourseId(), obj.getCourseName(),obj.getProfessorId(),obj.getNumberOfStudents()));
 			}
 			
 	

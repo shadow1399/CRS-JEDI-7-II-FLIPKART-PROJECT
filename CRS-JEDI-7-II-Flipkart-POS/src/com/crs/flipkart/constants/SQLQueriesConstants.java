@@ -29,7 +29,9 @@ public class SQLQueriesConstants {
 	
 	//Admin Queries Constant
 	public static final String ADD_COURSE_QUERY="insert into course values(?,?,?,?)";
-	public static final String DROP_COUSRE_QUERY="delete from course where courseId=?";
+	public static final String	CHECK_COURSE_QUERY="select * from course where courseId=?";
+	
+	public static final String DROP_COURSE_ADMIN_QUERY="delete from course where courseId=?";
 	public static final String GET_PROFESSOR_QUERY="select professorId,Department,name from professor,user where userId=professorId";
 	public static final String GET_STUDENT_QUERY="select * from student";
 	public static final String GET_COURSE_QUERY="select * from course";

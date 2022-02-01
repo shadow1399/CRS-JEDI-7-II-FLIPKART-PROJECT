@@ -7,11 +7,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import org.apache.log4j.Logger;
+
 import com.crs.flipkart.constants.SQLQueriesConstants;
+import com.crs.flipkart.exceptions.UserInvalidCredentialsException;
 import com.crs.flipkart.utils.DBUtils;
 
 /**
- * @author YASH
+ * @author SATYANSH
  *
  */
 public class UserDaoOperations implements UserDaoInterface {
@@ -19,34 +22,34 @@ public class UserDaoOperations implements UserDaoInterface {
 	private PreparedStatement statement=null;
 	
 	Connection connection=DBUtils.getConnection();
+	private static Logger logger = Logger.getLogger(UserDaoOperations.class);
 
 	@Override
-	public boolean verifyCredentials(String email, String password) {
+	public boolean verifyCredentials(String email, String password) throws UserInvalidCredentialsException{
 		// TODO Auto-generated method stub
 		try {
 			statement = connection.prepareStatement(SQLQueriesConstants.VERIFY_CREDENTIALS);
 			statement.setString(1, email);
 			ResultSet resultSet = statement.executeQuery();
 			if (!resultSet.next()) {
-				System.out.println("USer Not Found");
-				return false;
+				throw new UserInvalidCredentialsException(email);
+				
 			}
 			else if (password.equals(resultSet.getString("password")))
 				return true;
 			else {
-				System.out.println("Invalid email or Password");
-				return false;
+				throw new UserInvalidCredentialsException(email);
 			}
 				
 		} catch (Exception e) {
-			System.out.println(e);
+			logger.error(e.getMessage());
 		}
 
 		return false;
 	}
 
 	@Override
-	public boolean updatePassword(String email, String password) {
+	public boolean updatePassword(String email, String password) throws UserInvalidCredentialsException{
 		// TODO Auto-generated method stub
 		try {
 			statement = connection.prepareStatement(SQLQueriesConstants.UPDATE_PASSWORD);
@@ -54,19 +57,18 @@ public class UserDaoOperations implements UserDaoInterface {
 			statement.setString(2, email);
 			ResultSet resultSet = statement.executeQuery();
 			if (!resultSet.next()) {
-				System.out.println("User Not Found!!");
-				return false;
+				throw new UserInvalidCredentialsException(email);
 			}
-				
+			logger.info("Password Updated Successfully!!!");
 			return true;
 		} catch (Exception e) {
-			System.out.println(e);
+			logger.error(e.getMessage());
 		} 
 		return false;
 	}
 
 	@Override
-	public String getUserType(String email) {
+	public String getUserType(String email) throws UserInvalidCredentialsException {
 		// TODO Auto-generated method stub
 		
 		try {
@@ -74,14 +76,16 @@ public class UserDaoOperations implements UserDaoInterface {
 			statement.setString(1, email);
 			ResultSet resultSet = statement.executeQuery();
 			if (!resultSet.next()) {
-				System.out.println("User Not Found");
-				return null;
+				throw new UserInvalidCredentialsException(email);
 			}
 				
-			else
+			else {
+				
 				return resultSet.getString("type");
+			}
+				
 		} catch (Exception e) {
-			System.out.println(e);
+			logger.error(e.getMessage());
 			
 		} 
 		return null;

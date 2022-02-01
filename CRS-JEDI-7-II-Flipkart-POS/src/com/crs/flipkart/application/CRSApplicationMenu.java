@@ -130,7 +130,7 @@ public class CRSApplicationMenu {
 //				RoleConstants userRole = RoleConstants.stringToName(role);
 				switch (userType) {
 					case "ADMIN":
-						System.out.println(" Login Successful!");
+						System.out.println("Welcome Admin,You've Logged In Successfully!!!!");
 						CRSAdminMenu adminMenu = new CRSAdminMenu();
 						adminMenu.createMenu();
 						break;

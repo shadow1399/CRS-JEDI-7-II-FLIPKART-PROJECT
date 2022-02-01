@@ -4,7 +4,7 @@ public class Course {
 
 	private String courseName;
 	private String courseId;
-	private String professorId;
+	private String professorId="Not Alloted";
 	private int numberOfStudents;
 	
 	/**

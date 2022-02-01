@@ -12,6 +12,8 @@ import com.crs.flipkart.bean.Course;
 import com.crs.flipkart.bean.Professor;
 import com.crs.flipkart.bean.Student;
 import com.crs.flipkart.constants.SQLQueriesConstants;
+import com.crs.flipkart.exceptions.AddCourseException;
+import com.crs.flipkart.exceptions.CourseNotFoundException;
 import com.crs.flipkart.utils.DBUtils;
 
 /**
@@ -61,18 +63,21 @@ public class AdminDaoOperations implements AdminDaoInterface {
 	}
 	
 	@Override
-	public boolean dropCourse(String courseId) {
+	public boolean dropCourse(String courseId) throws CourseNotFoundException{
 		// TODO Auto-generated method stub
 		try {
 //			System.out.println(courseId);
 //			 String sql="delete from course where courseId=?";
 			 
-			 statement=connection.prepareStatement(SQLQueriesConstants.DROP_COUSRE_QUERY);
+			 statement=connection.prepareStatement(SQLQueriesConstants.DROP_COURSE_ADMIN_QUERY);
 			 statement.setString(1, courseId);
 			 
 			 
 			 
-			 statement.executeUpdate();
+			 int rowAffected=statement.executeUpdate();
+			 if(rowAffected==0) {
+				 throw new CourseNotFoundException(courseId);
+			 }
 			 logger.info("Course Dropped Successfully!!!");
 			 return true;
 		}catch(Exception e) {
@@ -206,11 +211,16 @@ public class AdminDaoOperations implements AdminDaoInterface {
 
 	
 	
-	public boolean addCourse(Course course) {
+	public boolean addCourse(Course course) throws AddCourseException{
 		try {
 //			 String sql="insert into course values(?,?,?,?)";
 				
-			 
+			 statement=connection.prepareStatement(SQLQueriesConstants.CHECK_COURSE_QUERY);
+			 statement.setString(1, course.getCourseId());
+			 ResultSet rs=statement.executeQuery();
+			 if(rs.next()) {
+				 throw new AddCourseException(course.getCourseId());
+			 }
 			 statement=connection.prepareStatement(SQLQueriesConstants.ADD_COURSE_QUERY);
 			 statement.setString(1, course.getCourseId());
 			 statement.setString(2, course.getCourseName());
