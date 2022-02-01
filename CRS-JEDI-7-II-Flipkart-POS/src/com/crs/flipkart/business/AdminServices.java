@@ -13,45 +13,64 @@ import com.crs.flipkart.dao.AdminDaoInterface;
 import com.crs.flipkart.dao.AdminDaoOperations;
 
 /**
- * @author YASH
+ * @author SATYANSH
  *
  */
 public class AdminServices implements AdminInterface {
-
+	
+	
+	AdminDaoInterface adminDaoOperation=new AdminDaoOperations();
 	@Override
-	public void approveStudent(String rollNo) {
+	public boolean approveStudent(String rollNo) {
 		// TODO Auto-generated method stub
 		try {
-			AdminDaoInterface adminDaoOperation=new AdminDaoOperations();
+			
 			adminDaoOperation.approveStudent(rollNo);
+			return true;
 		}catch(Exception e) {
 			System.out.println(e);
 		}
+		return false;
 		
 	}
 
 	@Override
-	public void addCourse(Course course) {
+	public boolean addProfessor(Professor professor) {
 		// TODO Auto-generated method stub
 		try {
-			AdminDaoInterface adminDaoOperation=new AdminDaoOperations();
+//			AdminDaoInterface adminDaoOperation=new AdminDaoOperations();
+			adminDaoOperation.addProfessor(professor);
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+		return false;
+	}
+
+	@Override
+	public boolean addCourse(Course course) {
+		// TODO Auto-generated method stub
+		try {
+//			AdminDaoInterface adminDaoOperation=new AdminDaoOperations();
 			adminDaoOperation.addCourse(course);
+			return true;
 		}catch(Exception e) {
 			System.out.println(e);
 		}
+		return false;
 		
 	}
 
 	@Override
-	public void dropCourse(String courseId) {
+	public boolean dropCourse(String courseId) {
 		// TODO Auto-generated method stub
 		try {
-			AdminDaoInterface adminDaoOperation=new AdminDaoOperations();
+//			AdminDaoInterface adminDaoOperation=new AdminDaoOperations();
 			adminDaoOperation.dropCourse(courseId);
+			return true;
 		}catch(Exception e) {
 			System.out.println(e);
 		}
-		
+		return false;
 	}
 
 	@Override
@@ -59,7 +78,7 @@ public class AdminServices implements AdminInterface {
 		// TODO Auto-generated method stub
 		List<Course> courses=new ArrayList<Course>();
 		try {
-			AdminDaoInterface adminDaoOperation=new AdminDaoOperations();
+//			AdminDaoInterface adminDaoOperation=new AdminDaoOperations();
 			courses=adminDaoOperation.getCourses();
 		}catch(Exception e) {
 			System.out.println(e);
@@ -79,7 +98,7 @@ public class AdminServices implements AdminInterface {
 		// TODO Auto-generated method stub
 		List<Student> students=new ArrayList<Student>();
 		try {
-			AdminDaoInterface adminDaoOperation=new AdminDaoOperations();
+//			AdminDaoInterface adminDaoOperation=new AdminDaoOperations();
 			students=adminDaoOperation.getStudents();
 		}catch(Exception e) {
 			System.out.println(e);
@@ -92,7 +111,7 @@ public class AdminServices implements AdminInterface {
 		// TODO Auto-generated method stub
 		List<Professor> professors=new ArrayList<Professor>();
 		try {
-			AdminDaoInterface adminDaoOperation=new AdminDaoOperations();
+//			AdminDaoInterface adminDaoOperation=new AdminDaoOperations();
 			professors=adminDaoOperation.getProfessors();
 		}catch(Exception e) {
 			System.out.println(e);

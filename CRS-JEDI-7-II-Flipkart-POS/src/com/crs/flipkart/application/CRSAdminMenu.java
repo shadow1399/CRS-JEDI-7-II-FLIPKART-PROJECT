@@ -12,7 +12,7 @@ import com.crs.flipkart.business.AdminInterface;
 import com.crs.flipkart.business.AdminServices;
 
 /**
- * @author YASH
+ * @author SATYANSH
  *
  */
 public class CRSAdminMenu {
@@ -25,7 +25,7 @@ public class CRSAdminMenu {
 	public void createMenu(){		
 		
 		int choice=0;
-		while(choice!=8) {
+		while(choice!=9) {
 			System.out.println("\n\n----------------------------------------------------------------------------------------");
 			System.out.println("---------------------------------------------ADMIN MENU---------------------------------------");
 			System.out.println("---------------------------------------------------------------------------------------------\n");
@@ -37,7 +37,8 @@ public class CRSAdminMenu {
 			System.out.println("5. Generate Report Card");
 			System.out.println("6. View All Professors");
 			System.out.println("7. View All Courses");
-			System.out.println("8. Exit Admin Menu");
+			System.out.println("8. Add Professor");
+			System.out.println("9. Exit Admin Menu");
 
 			System.out.println("------------------------------------------");
 			System.out.print("ENTER YOUR CHOICE--->:\t");
@@ -72,8 +73,12 @@ public class CRSAdminMenu {
 				case 7:
 					viewAllCourses();
 					break;
-					
 				case 8:
+					addProfessor();
+					break;
+					
+					
+				case 9:
 					return;
 					
 				default:
@@ -107,6 +112,43 @@ public class CRSAdminMenu {
 		try {
 			
 			adminInterface.addCourse(course);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		System.out.println("---------------------------------------------------------------------------------------------\n");
+
+	}
+	
+	private void addProfessor()
+	{
+		System.out.println("\n\n----------------------------------------------------------------------------------------");
+		System.out.println("---------------------------------------ADD PROFESSOR----------------------------------------");
+		System.out.println("---------------------------------------------------------------------------------------------\n");
+
+		System.out.println("Enter Professor's Id:");
+		String professorId = scanner.nextLine();
+		
+		System.out.println("Enter Professor's Name:");
+		String professorName = scanner.nextLine();
+		
+		System.out.println("Enter Professor's Phone Number:");
+		String phoneNumber = scanner.nextLine();
+		
+		System.out.println("Enter Professor's Email:");
+		String professorEmail = scanner.nextLine();
+		
+		Professor professor = new Professor();
+		professor.setProfessorId(professorId);
+		professor.setName(professorName);
+		professor.setType("professor");
+		professor.setPassword("password");
+		professor.setPhoneNumber(phoneNumber);
+		professor.setDepartment(professorEmail);
+		
+		
+		try {
+			
+			adminInterface.addProfessor(professor);
 		} catch (Exception e) {
 			System.out.println(e);
 		}

@@ -34,6 +34,10 @@ public class SQLQueriesConstants {
 	public static final String GET_STUDENT_QUERY="select * from student";
 	public static final String GET_COURSE_QUERY="select * from course";
 	public static final String APPROVE_STUDENT_QUERY="update student set isVerified=1 where rollNo=?";
+	public static final String ADD_PROFESSOR_QUERY="insert into professor values(?,?)";
+	public static final String ADD_USER_QUERY="insert into user values(?,?,?,?,?,?)";
+	
+	
 		
 	public static final String VERIFY_CREDENTIALS="select password from user where email = ?";
 	public static final String UPDATE_PASSWORD="update user set password=? where email = ? ";

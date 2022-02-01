@@ -6,6 +6,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.crs.flipkart.bean.Course;
 import com.crs.flipkart.bean.Professor;
 import com.crs.flipkart.bean.Student;
@@ -13,16 +15,53 @@ import com.crs.flipkart.constants.SQLQueriesConstants;
 import com.crs.flipkart.utils.DBUtils;
 
 /**
- * @author YASH
+ * @author SATYANSH
  *
  */
 public class AdminDaoOperations implements AdminDaoInterface {
 	
+	
+
+
+
 	private PreparedStatement statement=null;
 	
 	Connection connection=DBUtils.getConnection();
+	private static Logger logger = Logger.getLogger(AdminDaoOperations.class);
+	
 	@Override
-	public void dropCourse(String courseId) {
+	public boolean addProfessor(Professor professor) {
+		// TODO Auto-generated method stub
+		
+		try {
+
+			statement=connection.prepareStatement(SQLQueriesConstants.ADD_PROFESSOR_QUERY);
+			statement.setString(1, professor.getProfessorId());
+			statement.setString(2, professor.getDepartment());
+			
+			statement.executeUpdate();
+			statement=connection.prepareStatement(SQLQueriesConstants.ADD_USER_QUERY);
+			statement.setString(1,professor.getProfessorId());
+			statement.setString(2, professor.getName());
+			statement.setString(3, professor.getPassword());
+			statement.setString(4, professor.getType());
+			
+			statement.setString(5, professor.getPhoneNumber());
+			statement.setString(6, professor.getEmail());
+			statement.executeUpdate();
+			
+			logger.info("Professor Added Successfully!!!");
+			return true;
+			
+		}catch(Exception e) {
+			logger.error(e.getMessage());
+		}
+		
+		return false;
+	}
+	
+	@Override
+	public boolean dropCourse(String courseId) {
 		// TODO Auto-generated method stub
 		try {
 //			System.out.println(courseId);
@@ -34,12 +73,12 @@ public class AdminDaoOperations implements AdminDaoInterface {
 			 
 			 
 			 statement.executeUpdate();
-			 System.out.println("Course Dropped Successfully");
-			 
+			 logger.info("Course Dropped Successfully!!!");
+			 return true;
 		}catch(Exception e) {
-			System.out.println(e);
+			logger.error(e.getMessage());		
 		}
-		
+		return false;
 	}
 
 	@Override
@@ -66,7 +105,7 @@ public class AdminDaoOperations implements AdminDaoInterface {
 				
 			 }
 		}catch(Exception e) {
-			System.out.println(e);
+			logger.error(e.getMessage());
 		}
 		
 		return courses;
@@ -97,7 +136,7 @@ public class AdminDaoOperations implements AdminDaoInterface {
 				
 			 }
 		}catch(Exception e) {
-			System.out.println(e);
+			logger.error(e.getMessage());
 		}
 		
 		return students;
@@ -128,14 +167,14 @@ public class AdminDaoOperations implements AdminDaoInterface {
 				
 			 }
 		}catch(Exception e) {
-			System.out.println(e);
+			logger.error(e.getMessage());
 		}
 		
 		return professors;
 	}
 
 	@Override
-	public void approveStudent(String rollNo) {
+	public boolean approveStudent(String rollNo) {
 		// TODO Auto-generated method stub
 		try {
 			
@@ -147,13 +186,13 @@ public class AdminDaoOperations implements AdminDaoInterface {
 			 
 			 
 			 statement.executeUpdate();
-			 System.out.println("Student having "+rollNo+" Approved Successfully!!");
-			 
+			 logger.info("Student having rollNo "+rollNo+" Approved Successfully!!");
+			 return true;
 		}catch(Exception e) {
-			System.out.println(e);
+			logger.error(e.getMessage());
 		}
 		
-		
+		return false;
 		
 	}
 
@@ -167,7 +206,7 @@ public class AdminDaoOperations implements AdminDaoInterface {
 
 	
 	
-	public void addCourse(Course course) {
+	public boolean addCourse(Course course) {
 		try {
 //			 String sql="insert into course values(?,?,?,?)";
 				
@@ -179,12 +218,13 @@ public class AdminDaoOperations implements AdminDaoInterface {
 			 statement.setInt(4, course.getNumberOfStudents());
 			 
 			 statement.executeUpdate();
-			 System.out.println("Course Added Successfully");
+			 logger.info("Course Added Successfully!!!");
+			 return true;
 			 
 		}catch(Exception e) {
-			System.out.println(e);
+			logger.error(e.getMessage());
 		}
-		
+		return false;
 	}
 	
 	

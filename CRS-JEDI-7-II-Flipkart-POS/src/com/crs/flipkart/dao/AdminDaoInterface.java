@@ -10,7 +10,7 @@ import com.crs.flipkart.bean.Professor;
 import com.crs.flipkart.bean.Student;
 
 /**
- * @author YASH
+ * @author SATYANSH
  *
  */
 public interface AdminDaoInterface {
@@ -19,13 +19,13 @@ public interface AdminDaoInterface {
 	 * Add course to the course table in DB
 	 * @param course
 	 */
-	public void addCourse(Course course);
+	public boolean addCourse(Course course);
 	
 	/**
 	 * Drop course from the course table in DB
 	 * @param courseId
 	 */
-	public void dropCourse(String courseId);
+	public boolean dropCourse(String courseId);
 	
 	/**
 	 * Fetch all the courses available in the course table in DB
@@ -49,11 +49,18 @@ public interface AdminDaoInterface {
 	 * Approve the students in student table in DB
 	 * @param rollNo
 	 */
-	public void approveStudent(String rollNo);
+	public boolean approveStudent(String rollNo);
 	 /**
 	  * Generate Report Card of all the students of given semester
 	  * @param semester
 	  */
 	public void generateReportCard(int semester);
+	
+	/**
+	 * Add the Professor to the System
+	 * @param professor
+	 * @return boolean value
+	 */
+	public boolean addProfessor(Professor professor);
 	
 }
