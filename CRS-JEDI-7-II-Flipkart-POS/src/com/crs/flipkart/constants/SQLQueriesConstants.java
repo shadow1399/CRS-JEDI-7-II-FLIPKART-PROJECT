@@ -38,4 +38,12 @@ public class SQLQueriesConstants {
 	public static final String VERIFY_CREDENTIALS="select password from user where email = ?";
 	public static final String UPDATE_PASSWORD="update user set password=? where email = ? ";
 	public static final String GET_Type="select type from user where email = ? ";
+	
+	//Professor Queries
+	public static final String COURSES_TAUGHT_BYPROFESSOR="select * from course where professorId=?";
+	public static final String STUDENTS_REGISTERED_INACOURSE="select * from semesterregistration where courseId=?";
+	public static final String COURSETABLE_RECORDS="select * from course";
+	public static final String ADDING_GRADES="update semesterregistration set grade=? where rollNo=? and courseId=?";
+	public static final String VACANT_COURSES="select * from course where courseId=? and isnull(professorId) and numberOfStudents>=3";
+	public static final String REGISTER_FOR_COURSE="update course set professorId=? where courseId=?";
 }
