@@ -9,6 +9,8 @@ package com.crs.flipkart.constants;
  */
 public class SQLQueriesConstants {
 	
+	//TODO: Add comments
+	
 	public static final String VIEW_REGISTERED_COURSES=" select * from course inner join semesterregistration on course.courseId = semesterregistration.courseId where semesterregistration.rollNo = ? and semesterregistration.semester = ?";
 	public static final String VIEW_AVAILABLE_COURSES=" select * from course where courseId not in  (select courseId  from semesterregistration where rollNo = ? and semester = ?) and numberOfStudents < 10";
 	public static final String INCREMENT_COURSE_SEATS="update course set numberOfStudents = numberOfStudents+1 where courseId = ? ";
