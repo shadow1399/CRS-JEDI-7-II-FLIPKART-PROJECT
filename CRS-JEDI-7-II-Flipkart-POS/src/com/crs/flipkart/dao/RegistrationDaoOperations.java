@@ -239,20 +239,76 @@ public class RegistrationDaoOperations implements RegistrationDaoInterface {
 
 	@Override
 	public boolean isRegistered(String courseCode, String studentId, int semester) throws SQLException {
-		// TODO Auto-generated method stub
-		return false;
+		Connection conn = DBUtils.getConnection();
+		
+		boolean check = false;
+		try
+		{
+			stmt = conn.prepareStatement(SQLQueriesConstants.IS_REGISTERED);
+			stmt.setString(1, courseCode);
+			stmt.setString(2, studentId);
+			stmt.setInt(3, semester);
+			ResultSet rs = stmt.executeQuery();
+			
+			while(rs.next())
+			{
+				check = true;
+			}
+		}
+		catch(SQLException e)
+		{
+			logger.error(e.getMessage());
+		}
+		
+		
+		return check;
 	}
 
 	@Override
 	public boolean isValidCourse(String courseId) throws SQLException {
-		// TODO Auto-generated method stub
-		return false;
+		Connection conn = DBUtils.getConnection();
+		
+		boolean check = false;
+		try
+		{
+			stmt = conn.prepareStatement(SQLQueriesConstants.IS_VALID_COURSE);
+			stmt.setString(1, courseId);
+			ResultSet rs = stmt.executeQuery();
+			
+			while(rs.next())
+				check = true;
+		}
+		catch(SQLException e)
+		{
+			logger.error(e.getMessage());
+		}
+		
+		
+		return check;
 	}
 
 	@Override
 	public boolean isPaymentExist(String studentId, int semester) throws SQLException {
-		// TODO Auto-generated method stub
-		return false;
+		Connection conn = DBUtils.getConnection();
+		
+		boolean check = false;
+		try
+		{
+			stmt = conn.prepareStatement(SQLQueriesConstants.IS_PAYMENT_EXISTS);
+			stmt.setString(1, studentId);
+			stmt.setInt(2, semester);
+			stmt.setString(3,"SUCCESS");
+			ResultSet rs = stmt.executeQuery();
+			
+			while(rs.next())
+				check = true;
+		}
+		catch(SQLException e)
+		{
+			logger.error(e.getMessage());
+		}
+		
+		return check;
 	}
 
 }

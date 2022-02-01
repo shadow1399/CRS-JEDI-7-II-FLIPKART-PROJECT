@@ -9,7 +9,7 @@ import java.util.List;
 import com.crs.flipkart.bean.Course;
 import com.crs.flipkart.bean.Professor;
 import com.crs.flipkart.bean.Student;
-import com.crs.flipkart.constants.SQLQueryConstants;
+import com.crs.flipkart.constants.SQLQueriesConstants;
 import com.crs.flipkart.utils.DBUtils;
 
 /**
@@ -28,7 +28,7 @@ public class AdminDaoOperations implements AdminDaoInterface {
 //			System.out.println(courseId);
 //			 String sql="delete from course where courseId=?";
 			 
-			 statement=connection.prepareStatement(SQLQueryConstants.DROP_COUSRE_QUERY);
+			 statement=connection.prepareStatement(SQLQueriesConstants.DROP_COUSRE_QUERY);
 			 statement.setString(1, courseId);
 			 
 			 
@@ -50,7 +50,7 @@ public class AdminDaoOperations implements AdminDaoInterface {
 		try {
 //			 String sql="select * from course";
 			 
-			 statement=connection.prepareStatement(SQLQueryConstants.GET_COURSE_QUERY);
+			 statement=connection.prepareStatement(SQLQueriesConstants.GET_COURSE_QUERY);
 			 
 			 ResultSet listCourses=statement.executeQuery();
 			 
@@ -81,7 +81,7 @@ public class AdminDaoOperations implements AdminDaoInterface {
 		try {
 //			 String sql="select * from student";
 			 
-			 statement=connection.prepareStatement(SQLQueryConstants.GET_STUDENT_QUERY);
+			 statement=connection.prepareStatement(SQLQueriesConstants.GET_STUDENT_QUERY);
 			 
 			 ResultSet listStudents=statement.executeQuery();
 			 
@@ -112,7 +112,7 @@ public class AdminDaoOperations implements AdminDaoInterface {
 //			 String sql="select * from professor";
 			
 			 
-			 statement=connection.prepareStatement(SQLQueryConstants.GET_PROFESSOR_QUERY);
+			 statement=connection.prepareStatement(SQLQueriesConstants.GET_PROFESSOR_QUERY);
 			 
 			 ResultSet listProfessors=statement.executeQuery();
 			 
@@ -141,7 +141,7 @@ public class AdminDaoOperations implements AdminDaoInterface {
 			
 //			 String sql="update student set isVerified=1 where rollNo=?";
 			 
-			 statement=connection.prepareStatement(SQLQueryConstants.APPROVE_STUDENT_QUERY);
+			 statement=connection.prepareStatement(SQLQueriesConstants.APPROVE_STUDENT_QUERY);
 			 statement.setString(1, rollNo);
 			 
 			 
@@ -172,7 +172,7 @@ public class AdminDaoOperations implements AdminDaoInterface {
 //			 String sql="insert into course values(?,?,?,?)";
 				
 			 
-			 statement=connection.prepareStatement(SQLQueryConstants.ADD_COURSE_QUERY);
+			 statement=connection.prepareStatement(SQLQueriesConstants.ADD_COURSE_QUERY);
 			 statement.setString(1, course.getCourseId());
 			 statement.setString(2, course.getCourseName());
 			 statement.setString(3, course.getProfessorId());

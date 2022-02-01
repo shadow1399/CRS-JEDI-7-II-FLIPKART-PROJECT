@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import com.crs.flipkart.constants.SQLQueryConstants;
+import com.crs.flipkart.constants.SQLQueriesConstants;
 import com.crs.flipkart.utils.DBUtils;
 
 /**
@@ -24,7 +24,7 @@ public class UserDaoOperations implements UserDaoInterface {
 	public boolean verifyCredentials(String email, String password) {
 		// TODO Auto-generated method stub
 		try {
-			statement = connection.prepareStatement(SQLQueryConstants.VERIFY_CREDENTIALS);
+			statement = connection.prepareStatement(SQLQueriesConstants.VERIFY_CREDENTIALS);
 			statement.setString(1, email);
 			ResultSet resultSet = statement.executeQuery();
 			if (!resultSet.next()) {
@@ -49,7 +49,7 @@ public class UserDaoOperations implements UserDaoInterface {
 	public boolean updatePassword(String email, String password) {
 		// TODO Auto-generated method stub
 		try {
-			statement = connection.prepareStatement(SQLQueryConstants.UPDATE_PASSWORD);
+			statement = connection.prepareStatement(SQLQueriesConstants.UPDATE_PASSWORD);
 			statement.setString(1, password);
 			statement.setString(2, email);
 			ResultSet resultSet = statement.executeQuery();
@@ -70,7 +70,7 @@ public class UserDaoOperations implements UserDaoInterface {
 		// TODO Auto-generated method stub
 		
 		try {
-			statement = connection.prepareStatement(SQLQueryConstants.GET_Type);
+			statement = connection.prepareStatement(SQLQueriesConstants.GET_Type);
 			statement.setString(1, email);
 			ResultSet resultSet = statement.executeQuery();
 			if (!resultSet.next()) {

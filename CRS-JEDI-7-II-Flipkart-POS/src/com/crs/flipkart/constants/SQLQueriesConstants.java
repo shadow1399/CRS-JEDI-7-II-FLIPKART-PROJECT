@@ -22,6 +22,10 @@ public class SQLQueriesConstants {
 	public static final String GET_SEATS = "select seats from course where courseId = ?;";
 	public static final String INSERT_PAYMENT = "insert into payment(paymentId,rollNo,status,amount,notificationId,semester) values(?,?,?,?,?,?);";
 	public static final String VIEW_PAYMENT = "select * from  payment where paymentId = ? and semester = ?;";
+	public static final String NUMBER_OF_REGISTERED_COURSES=" select studentId from semesterregistration where studentId = ? and semester = ?";
+	public static final String IS_REGISTERED=" select courseId from semesterregistration where courseId=? and studentId=? and semester = ?";
+	public static final String IS_VALID_COURSE = "select courseId from course where courseId = ?;";
+	public static final String IS_PAYMENT_EXISTS = "select paymentId from payment where rollNo = ? and semester = ? and status = ?";
 	
 	//Admin Queries Constant
 	public static final String ADD_COURSE_QUERY="insert into course values(?,?,?,?)";
