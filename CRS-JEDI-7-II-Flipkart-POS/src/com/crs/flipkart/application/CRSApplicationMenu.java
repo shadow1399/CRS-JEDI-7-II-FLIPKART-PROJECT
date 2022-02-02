@@ -7,9 +7,11 @@ import java.util.*;
 
 import com.crs.flipkart.business.UserInterface;
 import com.crs.flipkart.business.UserServices;
+import com.crs.flipkart.business.StudentInterface;
+import com.crs.flipkart.business.StudentOperation;
 
 /**
- * @author SATYANSH
+ * @author Shubham Sharma
  *
  */
 public class CRSApplicationMenu {
@@ -71,7 +73,7 @@ public class CRSApplicationMenu {
 	private static void registerUser() {
 		Scanner sc = new Scanner(System.in);
 
-		String userId, name, password,branch, mobileNumber, rollNumber;
+		String userId, name, password,branch, mobileNumber, rollNumber,address;
 
 		try {
 			// input all the student details
@@ -91,11 +93,13 @@ public class CRSApplicationMenu {
 			mobileNumber = sc.nextLine();
 			System.out.println("Branch:");
 			branch = sc.nextLine();
+			System.out.println("Address:");
+			address = sc.nextLine();
 			
 
-//			StudentOperation studentOperation = new StudentOperation();
-//			studentOperation.registerStudent(name, mobileNumber, address, userId, password, String.valueOf(STUDENT),
-//					rollNumber, branch, false);
+			StudentOperation studentOperation = new StudentOperation();
+			studentOperation.registerStudent(name, mobileNumber, address, userId, password, "STUDENT",
+					rollNumber, branch, false);
 			System.out.println("-----------------------------------------------------------------------------------------\n");
 
 		} catch (Exception ex) {
@@ -122,8 +126,7 @@ public class CRSApplicationMenu {
 			password = sc.next();
 			UserInterface userInterface = new UserServices();
 			boolean isLoggedIn = userInterface.verifyCredentials(email, password);
-			// 2 cases
-			// true->role->student->approved
+			
 			if (isLoggedIn) {
 				String type = userInterface.getUserType(email);
 				String userType=type.toUpperCase();
@@ -134,26 +137,26 @@ public class CRSApplicationMenu {
 						CRSAdminMenu adminMenu = new CRSAdminMenu();
 						adminMenu.createMenu();
 						break;
-					case "PROFESSOR":
-						System.out.println(" Login Successful!");
-						CRSProfessorMenu professorMenu = new CRSProfessorMenu();
-						//getuserid from database
-						String userId="user1";//giving statically
-						professorMenu.displayProfessorMenu(userId);
+//					case "PROFESSOR":
+//						System.out.println(" Login Successful!");
+//						CRSProfessorMenu professorMenu = new CRSProfessorMenu();
+//						//getuserid from database
+//						String userId="user1";//giving statically
+//						professorMenu.displayProfessorMenu(userId);
+//						break;
+					case "STUDENT":
+						StudentInterface studentInterface = new StudentOperation();
+						int isApproved = studentInterface.checkIsVerified(email);
+						if (isApproved == 1) {
+							System.out.println( " Login Successful!");
+							CRSStudentMenu studentMenu = new CRSStudentMenu();
+							studentMenu.create_menu(email);
+	
+						} else {
+							System.out.println("You have not been approved by the admin!");
+							isLoggedIn = false;
+						}
 						break;
-	//				case "STUDENT":
-	//					StudentInterface studentInterface = new StudentOperation();
-	//					int isApproved = studentInterface.checkIsVerified(userId);
-	//					if (isApproved == 1) {
-	//						System.out.println( " Login Successful!");
-	//						StudentMenuCRS studentMenu = new StudentMenuCRS();
-	//						studentMenu.create_menu(userId);
-	//
-	//					} else {
-	//						System.out.println("You have not been approved by the admin!");
-	//						loggedin = false;
-	//					}
-	//					break;
 				}
 
 			} else {
