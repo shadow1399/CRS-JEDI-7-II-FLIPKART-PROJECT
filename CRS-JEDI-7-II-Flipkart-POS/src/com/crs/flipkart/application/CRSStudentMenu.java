@@ -128,6 +128,7 @@ public class CRSStudentMenu {
 
 				System.out.println("Enter Course Code : " + (count + 1));
 				String courseId = sc.nextLine();
+				System.out.println(courseId);
 
 				if (registrationInterface.addCourse(courseId, studentId, semester)) {
 					System.out.println("Course " + courseId + " registered successfully.");

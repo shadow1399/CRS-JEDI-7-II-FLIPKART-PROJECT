@@ -13,3 +13,23 @@
 04:41:10,333 ERROR AdminDaoOperations,main:84 - Course with courseCode: course2 not found.
 04:41:23,386  INFO AdminDaoOperations,main:231 - Course Added Successfully!!!
 04:43:51,652 ERROR AdminDaoOperations,main:84 - Course with courseCode: course2 not found.
+17:03:54,187 ERROR UserDaoOperations,main:45 - Invalid Credentials for email: 1818181
+17:04:11,466 ERROR UserDaoOperations,main:45 - Invalid Credentials for email: admin
+17:09:28,277  INFO AdminDaoOperations,main:194 - Student having rollNo 1818181 Approved Successfully!!
+17:17:00,906 ERROR UserDaoOperations,main:45 - Unknown column 'rollNo' in 'where clause'
+17:18:32,326 ERROR UserDaoOperations,main:88 - Invalid Credentials for email: 1818181
+17:21:12,003 ERROR UserDaoOperations,main:46 - Before start of result set
+17:30:02,337 ERROR UserDaoOperations,main:46 - Before start of result set
+17:39:27,896 ERROR RegistrationDaoOperations,main:234 - 
+17:39:27,899 ERROR RegistrationOperation,main:74 - Course with courseCode: course1 not found.
+17:44:15,270 ERROR RegistrationDaoOperations,main:234 - 
+17:44:15,272 ERROR RegistrationOperation,main:74 - Course with courseCode: course1 not found.
+17:46:08,430 ERROR RegistrationDaoOperations,main:234 - 
+17:46:08,432 ERROR RegistrationOperation,main:74 - Course with courseCode: course1 not found.
+17:47:11,354 ERROR RegistrationDaoOperations,main:234 - 
+17:47:29,580 ERROR RegistrationDaoOperations,main:260 - Unknown column 'studentId' in 'where clause'
+17:47:29,582 ERROR RegistrationOperation,main:100 - Course with courseCode: course1 can not be deleted.
+17:51:35,387  INFO AdminDaoOperations,main:231 - Course Added Successfully!!!
+17:51:57,471  INFO AdminDaoOperations,main:231 - Course Added Successfully!!!
+17:52:43,524  INFO AdminDaoOperations,main:55 - Professor Added Successfully!!!
+18:37:06,949  INFO AdminDaoOperations,main:194 - Student having rollNo 123 Approved Successfully!!

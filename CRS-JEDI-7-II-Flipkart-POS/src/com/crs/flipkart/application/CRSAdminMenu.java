@@ -134,8 +134,8 @@ public class CRSAdminMenu {
 		System.out.println("Enter Professor's Phone Number:");
 		String phoneNumber = scanner.nextLine();
 		
-		System.out.println("Enter Professor's Email:");
-		String professorEmail = scanner.nextLine();
+		System.out.println("Enter Professor's Department:");
+		String department = scanner.nextLine();
 		
 		Professor professor = new Professor();
 		professor.setProfessorId(professorId);
@@ -143,7 +143,8 @@ public class CRSAdminMenu {
 		professor.setType("professor");
 		professor.setPassword("password");
 		professor.setPhoneNumber(phoneNumber);
-		professor.setDepartment(professorEmail);
+		professor.setDepartment(department);
+		professor.setEmail(professorName);
 		
 		
 		try {

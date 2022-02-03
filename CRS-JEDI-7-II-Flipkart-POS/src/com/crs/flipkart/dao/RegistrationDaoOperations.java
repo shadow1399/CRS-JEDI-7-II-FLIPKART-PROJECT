@@ -63,7 +63,7 @@ public class RegistrationDaoOperations implements RegistrationDaoInterface {
 			stmt.setString(1, studentId);
 			stmt.setString(2, courseId);
 			stmt.setInt(3, semester);
-			stmt.setString(4, null);
+			stmt.setInt(4, 0);
 
 			stmt.executeUpdate();
 			stmt = conn.prepareStatement(SQLQueriesConstants.INCREMENT_COURSE_SEATS);

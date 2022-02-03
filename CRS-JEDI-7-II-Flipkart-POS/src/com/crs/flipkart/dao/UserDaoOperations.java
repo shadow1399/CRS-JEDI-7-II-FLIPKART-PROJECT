@@ -31,6 +31,7 @@ public class UserDaoOperations implements UserDaoInterface {
 			statement = connection.prepareStatement(SQLQueriesConstants.VERIFY_CREDENTIALS);
 			statement.setString(1, email);
 			ResultSet resultSet = statement.executeQuery();
+			//logger.info("Password : " + resultSet.getString("password"));
 			if (!resultSet.next()) {
 				throw new UserInvalidCredentialsException(email);
 				

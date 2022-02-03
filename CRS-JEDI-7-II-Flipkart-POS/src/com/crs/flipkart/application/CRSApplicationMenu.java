@@ -126,6 +126,7 @@ public class CRSApplicationMenu {
 			password = sc.next();
 			UserInterface userInterface = new UserServices();
 			boolean isLoggedIn = userInterface.verifyCredentials(email, password);
+	
 			
 			if (isLoggedIn) {
 				String type = userInterface.getUserType(email);
@@ -137,13 +138,13 @@ public class CRSApplicationMenu {
 						CRSAdminMenu adminMenu = new CRSAdminMenu();
 						adminMenu.createMenu();
 						break;
-//					case "PROFESSOR":
-//						System.out.println(" Login Successful!");
-//						CRSProfessorMenu professorMenu = new CRSProfessorMenu();
-//						//getuserid from database
-//						String userId="user1";//giving statically
-//						professorMenu.displayProfessorMenu(userId);
-//						break;
+					case "PROFESSOR":
+						System.out.println(" Login Successful!");
+						CRSProfessorMenu professorMenu = new CRSProfessorMenu();
+						//getuserid from database
+						String userId="user1";//giving statically
+						professorMenu.displayProfessorMenu(userId);
+						break;
 					case "STUDENT":
 						StudentInterface studentInterface = new StudentOperation();
 						int isApproved = studentInterface.checkIsVerified(email);

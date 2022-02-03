@@ -65,7 +65,7 @@ public class RegistrationOperation implements RegistrationInterface {
 			if (registrationDaoInterface.numOfRegisteredCourses(studentId, semester) >= 6) {
 				throw new CourseLimitReachedException(semester);
 			}
-			if(registrationDaoInterface.isValidCourse(courseId)) {
+			if(!registrationDaoInterface.isValidCourse(courseId)) {
 				throw new CourseNotFoundException(courseId);
 			}
 			return registrationDaoInterface.addCourse(courseId, studentId, semester);

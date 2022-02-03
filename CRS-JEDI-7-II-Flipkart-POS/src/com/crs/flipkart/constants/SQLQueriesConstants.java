@@ -15,15 +15,15 @@ public class SQLQueriesConstants {
 	public static final String VIEW_AVAILABLE_COURSES=" select * from course where courseId not in  (select courseId  from semesterregistration where rollNo = ? and semester = ?) and numberOfStudents < 10";
 	public static final String INCREMENT_COURSE_SEATS="update course set numberOfStudents = numberOfStudents+1 where courseId = ? ";
 	public static final String ADD_COURSE="insert into semesterregistration (rollNo,courseId,semester,grade) values ( ?,?,?,? )";
-	public static final String DROP_COURSE_QUERY = "delete from semesterregistration where courseId = ? AND rollNo = ? and semester = ?;";
+	public static final String DROP_COURSE_QUERY = "delete from semesterregistration where courseId = ? and rollNo = ? and semester = ?;";
 	public static final String DECREMENT_COURSE_SEATS  = "update course set numberOfStudents = numberOfStudents-1 where courseId = ?;";
 	public static final String VIEW_GRADE = "select course.courseId,course.courseName,semesterregistration.grade from course inner join semesterregistration on course.courseId = semesterregistration.courseId where semesterregistration.rollNo = ? and semesterregistration.semester = ?;";	
-	public static final String VIEW_REPORT_CARD = "select * from reportcard where studentId_report = ? and semester = ?;";	
+	public static final String VIEW_REPORT_CARD = "select * from reportcard where rollNo = ? and semester = ?;";	
 	public static final String GET_SEATS = "select seats from course where courseId = ?;";
 	public static final String INSERT_PAYMENT = "insert into payment(paymentId,rollNo,status,amount,notificationId,semester) values(?,?,?,?,?,?);";
 	public static final String VIEW_PAYMENT = "select * from  payment where paymentId = ? and semester = ?;";
-	public static final String NUMBER_OF_REGISTERED_COURSES=" select studentId from semesterregistration where studentId = ? and semester = ?";
-	public static final String IS_REGISTERED=" select courseId from semesterregistration where courseId=? and studentId=? and semester = ?";
+	public static final String NUMBER_OF_REGISTERED_COURSES=" select rollNo from semesterregistration where rollNo = ? and semester = ?";
+	public static final String IS_REGISTERED=" select courseId from semesterregistration where courseId=? and rollNo=? and semester = ?";
 	public static final String IS_VALID_COURSE = "select courseId from course where courseId = ?;";
 	public static final String IS_PAYMENT_EXISTS = "select paymentId from payment where rollNo = ? and semester = ? and status = ?";
 	
@@ -40,7 +40,7 @@ public class SQLQueriesConstants {
 	public static final String ADD_USER_QUERY="insert into user values(?,?,?,?,?,?)";
 	public static final String ADD_STUDENT = "insert into student values(?,?,?,?);";
 	public static final String GET_STUDENT_ID="select rollNumber from student where userId = ? ";
-	public static final String IS_APPROVED="select isVerified from student where rollNo = ? ";
+	public static final String IS_APPROVED="select isVerified from student join user as T on student.rollNo = T.userId  where T.email = ?;";
 		
 	public static final String VERIFY_CREDENTIALS="select password from user where email = ?";
 	public static final String UPDATE_PASSWORD="update user set password=? where email = ? ";
