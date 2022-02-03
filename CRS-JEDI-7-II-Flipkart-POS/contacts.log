@@ -13,3 +13,4 @@
 04:41:10,333 ERROR AdminDaoOperations,main:84 - Course with courseCode: course2 not found.
 04:41:23,386  INFO AdminDaoOperations,main:231 - Course Added Successfully!!!
 04:43:51,652 ERROR AdminDaoOperations,main:84 - Course with courseCode: course2 not found.
+04:44:50,362 ERROR AdminDaoOperations,main:235 - Course with courseId course1 already exist in catalog.
