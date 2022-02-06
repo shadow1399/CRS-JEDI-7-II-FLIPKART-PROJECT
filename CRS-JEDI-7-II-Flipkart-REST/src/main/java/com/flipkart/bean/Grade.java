@@ -4,7 +4,7 @@
 package com.flipkart.bean;
 
 /**
- * @author JEDI-02
+ * 
  * Grade Class
  */
 public class Grade {

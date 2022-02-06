@@ -4,7 +4,7 @@
 package com.flipkart.exception;
 
 /**
- * @author JEDI-02 Exception to check if course exists.
+ * Exception to check if course exists.
  */
 public class CourseNotFoundException extends Exception {
 

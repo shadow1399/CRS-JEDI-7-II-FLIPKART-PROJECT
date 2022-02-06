@@ -4,8 +4,8 @@
 package com.flipkart.bean;
 
 /**
- * @author JEDI-02
- * Scholarsihp Class
+ * 
+ * SemesterRegistration Class
  */
 public class SemesterRegistration {
 	private String coursesAdded[];
@@ -13,7 +13,7 @@ public class SemesterRegistration {
 	private String studentId;
 
 	/**
-	 * Getter Setter Methods for Course details
+	 * Getter Setter Methods for Registration details
 	 *
 	 */
 	public String[] getCoursesAdded() {

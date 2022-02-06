@@ -4,7 +4,7 @@
 package com.flipkart.exception;
 
 /**
- * @author JEDI-02 Exception to check if the user is approved.
+ *  Exception to check if the user is approved.
  */
 
 public class UserNotApprovedExecption extends Exception {

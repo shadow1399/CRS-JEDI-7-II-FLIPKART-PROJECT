@@ -4,8 +4,8 @@
 package com.flipkart.bean;
 
 /**
- * @author JEDI-02
- *	Card Class
+ * 
+ *	Card Class for payment functionality
  */
 public class Card {
 

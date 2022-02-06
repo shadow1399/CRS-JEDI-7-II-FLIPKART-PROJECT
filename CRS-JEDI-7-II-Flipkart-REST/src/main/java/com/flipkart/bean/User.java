@@ -4,8 +4,8 @@
 package com.flipkart.bean;
 
 /**
- * @author JEDI-02
- * Scholarsihp Class
+ * 
+ * User Class and Parent Class for Student,Professor and Admin
  */
 public class User {
 

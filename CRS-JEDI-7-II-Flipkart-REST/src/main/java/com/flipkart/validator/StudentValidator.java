@@ -11,7 +11,7 @@ import com.flipkart.exception.CourseLimitReachedException;
 import com.flipkart.exception.CourseNotFoundException;
 import com.flipkart.exception.SeatNotAvailableException;
 /**
- * @author JEDI-02
+ *
  *
  */
 

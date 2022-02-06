@@ -2,8 +2,8 @@ package com.flipkart.bean;
 
 /**
  * 
- * @author JEDI-02
- * Class for storing details of course Student has taken
+ * 
+ * Class for storing details of course, Student has taken
  * 
  */
 public class EnrolledStudent {

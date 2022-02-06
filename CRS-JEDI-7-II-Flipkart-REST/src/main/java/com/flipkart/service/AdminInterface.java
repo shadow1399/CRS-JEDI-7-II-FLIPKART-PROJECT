@@ -17,7 +17,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 
 /**
- * @author arya_
+ * Admin Interface 
  *
  */
 public interface AdminInterface {

@@ -1,7 +1,7 @@
 package com.flipkart.constant;
 /**
  *
- * @author JEDI-02
+ * Notification Type Constants
  *
  */
 public enum NotificationTypeConstants {

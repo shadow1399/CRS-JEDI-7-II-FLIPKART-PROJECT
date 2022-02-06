@@ -4,7 +4,7 @@
 package com.flipkart.bean;
 
 /**
- * @author JEDI-02
+ * 
  * Professor Class to implement Professor
  */
 public class Professor extends User {

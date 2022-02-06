@@ -21,7 +21,7 @@ import com.flipkart.utils.DBUtils;
 
 /**
  *
- * @author JEDI-03
+ * 
  * Class to implement Registration Dao Operations
  * This class communicates with the database.
  *

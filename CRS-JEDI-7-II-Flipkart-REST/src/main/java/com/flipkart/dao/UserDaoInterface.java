@@ -2,6 +2,11 @@ package com.flipkart.dao;
 
 import com.flipkart.exception.UserNotFoundException;
 
+/**
+ * 
+ * Interface for User Dao
+ *
+ */
 public interface UserDaoInterface {
 	
 	/**

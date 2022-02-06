@@ -26,11 +26,12 @@ import com.flipkart.service.StudentOperation;
 import com.flipkart.service.UserInterface;
 import com.flipkart.service.UserOperation;
 
+
 /**
- * @author JEDI-02
+ * 
+ * API to perform User Operations
  *
  */
-
 @Path("/user")
 public class UserRestAPI {
 

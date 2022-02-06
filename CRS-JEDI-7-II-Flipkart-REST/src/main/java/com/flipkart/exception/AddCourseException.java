@@ -4,7 +4,7 @@
 package com.flipkart.exception;
 
 /**
- * @author JEDI-02 Exception to check if the course is available for adding.
+ *  Exception to check if the course is available for adding.
  */
 public class AddCourseException extends Exception {
 	private String courseId;

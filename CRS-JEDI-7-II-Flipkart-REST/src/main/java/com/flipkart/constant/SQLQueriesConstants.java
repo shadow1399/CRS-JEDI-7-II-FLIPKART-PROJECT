@@ -4,7 +4,7 @@
 package com.flipkart.constant;
 
 /**
- * @author JEDI-02
+ * Sql Queries used to access DB
  *
  */
 public class SQLQueriesConstants {

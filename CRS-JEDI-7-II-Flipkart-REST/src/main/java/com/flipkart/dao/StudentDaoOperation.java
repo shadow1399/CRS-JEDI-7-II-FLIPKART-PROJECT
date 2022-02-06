@@ -18,7 +18,7 @@ import com.flipkart.service.StudentOperation;
 import com.flipkart.utils.DBUtils;
 
 /**
- * @author lenovo
+ * Operation Class for Student Dao Interface
  *
  */
 public class StudentDaoOperation implements StudentDaoInterface {

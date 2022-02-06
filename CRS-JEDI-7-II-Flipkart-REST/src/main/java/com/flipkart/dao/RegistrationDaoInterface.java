@@ -13,7 +13,7 @@ import com.flipkart.exception.PaymentNotFoundException;
 import com.flipkart.bean.Payment;
 
 /**
- * @author WIN 10
+ * Interface for Registration Dao
  *
  */
 public interface RegistrationDaoInterface {

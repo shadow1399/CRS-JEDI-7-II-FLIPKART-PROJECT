@@ -9,7 +9,7 @@ import com.flipkart.bean.Course;
 import com.flipkart.bean.EnrolledStudent;
 import com.flipkart.bean.Student;
 /**
- * @author hp
+ *Interface for Professor Dao
  *
  */
 public interface ProfessorDaoInterface {

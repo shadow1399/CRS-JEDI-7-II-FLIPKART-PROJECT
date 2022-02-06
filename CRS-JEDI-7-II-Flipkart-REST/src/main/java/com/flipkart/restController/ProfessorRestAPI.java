@@ -21,8 +21,14 @@ import com.flipkart.service.ProfessorInterface;
 import com.flipkart.service.ProfessorOperation;
 import com.flipkart.validator.ProfessorValidator;
 
+/**
+ * 
+ * API to perform Professor Operations
+ *
+ */
 @Path("/professor")
 public class ProfessorRestAPI {
+	//Fetching the instance of this class
 	ProfessorInterface professorInterface=ProfessorOperation.getInstance();
 	@GET
 	@Path("/getEnrolledStudents")

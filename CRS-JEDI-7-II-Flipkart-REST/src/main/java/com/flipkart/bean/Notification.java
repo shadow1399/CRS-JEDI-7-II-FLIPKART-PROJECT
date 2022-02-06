@@ -4,7 +4,7 @@
 package com.flipkart.bean;
 
 /**
- * @author JEDI-02
+ *
  * Notification Class
  */
 public class Notification {

@@ -3,7 +3,7 @@ package com.flipkart.exception;
 /**
  * Exception to check if student has been allotted grade by professor
  * 
- * @author JEDI-02
+ * 
  *
  */
 public class GradeNotAddedException extends Exception {

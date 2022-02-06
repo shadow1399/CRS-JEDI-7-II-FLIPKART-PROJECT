@@ -32,9 +32,11 @@ import com.flipkart.service.AdminInterface;
 import com.flipkart.service.AdminOperation;
 
 /**
- * @author arya_
+ * 
+ * API to perform Admin Operations
  *
  */
+
 @Path("/admin")
 public class AdminRestAPI {
 	

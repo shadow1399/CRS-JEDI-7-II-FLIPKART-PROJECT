@@ -14,7 +14,7 @@ import com.flipkart.exception.StudentNotFoundForVerificationException;
 import com.flipkart.exception.StudentNotRegisteredException;
 
 /**
- * @author JEDI-02
+ * 
  *
  */
 public interface ProfessorInterface {

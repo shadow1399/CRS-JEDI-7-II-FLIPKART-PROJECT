@@ -6,7 +6,7 @@ package com.flipkart.service;
 import com.flipkart.bean.Notification;
 
 /**
- * @author lenovo
+ *
  *
  */
 public class NotificationOperation implements NotificationInterface {

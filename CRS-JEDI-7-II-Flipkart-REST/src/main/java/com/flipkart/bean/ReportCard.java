@@ -6,7 +6,7 @@ package com.flipkart.bean;
 import java.util.HashMap;
 
 /**
- * @author JEDI-02
+ *
  * Class to implement Report Card
  *
  */

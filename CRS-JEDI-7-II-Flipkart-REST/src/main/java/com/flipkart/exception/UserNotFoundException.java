@@ -4,7 +4,7 @@
 package com.flipkart.exception;
 
 /**
- * @author JEDI-02 Exception to check if the user exists in the system.
+ * Exception to check if the user exists in the system.
  */
 
 public class UserNotFoundException extends Exception {

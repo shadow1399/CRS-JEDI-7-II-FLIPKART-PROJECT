@@ -1,14 +1,24 @@
 package com.flipkart.bean;
 /**
  *
- * @author JEDI-02
- * Admin Class
+ * 
+ * Admin Class which is extending the User Class
  *
  */
 public class Admin extends User {
 
 	private String adminId;
 
+	/**
+	 * Constructor
+	 * @param userName
+	 * @param phoneNumber
+	 * @param address
+	 * @param userId
+	 * @param userPassword
+	 * @param type
+	 * @param adminId
+	 */
 	public Admin(String userName, String phoneNumber, String address, String userId, String userPassword, String type,
 			String adminId) {
 		super(userName, phoneNumber, address, userId, userPassword, type);

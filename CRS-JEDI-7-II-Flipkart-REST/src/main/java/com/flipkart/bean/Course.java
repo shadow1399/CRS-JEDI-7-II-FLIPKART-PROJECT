@@ -4,8 +4,8 @@
 package com.flipkart.bean;
 
 /**
- * @author JEDI-02
- *	Course Class
+ * 
+ *	Course Class 
  */
 public class Course {
 

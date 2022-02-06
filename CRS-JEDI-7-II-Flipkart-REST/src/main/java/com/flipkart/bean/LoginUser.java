@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * @author lenovo
+ * CLass for User Login
  *
  */
 public class LoginUser {
@@ -17,16 +17,27 @@ public class LoginUser {
 	
 	private String password;
 	
+	/**
+	 * Dafault Constructor
+	 */
 	public LoginUser() {
 		
 	}
-	
+	/**
+	 * Parameterized Constructor
+	 * @param loginId
+	 * @param password
+	 */
 	@JsonCreator
 	public LoginUser(@JsonProperty("loginId") String loginId,
 			@JsonProperty("password") String password) {
 		this.loginId = loginId;
 		this.password = password;
 	}
+	/**
+	 * Getters and Setters for Login Class
+	 * @return
+	 */
 	public String getLoginId() {
 		return loginId;
 	}

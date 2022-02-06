@@ -4,7 +4,7 @@
 package com.flipkart.exception;
 
 /**
- * @author JEDI-02 Exception to check if the student exists in the system for
+ *  Exception to check if the student exists in the system for
  *         verification.
  */
 public class StudentNotFoundForVerificationException extends Exception {

@@ -6,7 +6,7 @@ package com.flipkart.service;
 import com.flipkart.bean.Notification;
 
 /**
- * @author JEDI-02
+ * 
  *
  */
 public interface NotificationInterface {

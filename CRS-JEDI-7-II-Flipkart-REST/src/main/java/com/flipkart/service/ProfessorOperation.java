@@ -15,7 +15,7 @@ import com.flipkart.exception.StudentNotRegisteredException;
 import com.flipkart.dao.ProfessorDaoInterface;
 import com.flipkart.dao.ProfessorDaoOperation;
 /**
- * @author JEDI-02
+ * 
  *	Implements Professor Operations
  */
 public class ProfessorOperation implements ProfessorInterface {

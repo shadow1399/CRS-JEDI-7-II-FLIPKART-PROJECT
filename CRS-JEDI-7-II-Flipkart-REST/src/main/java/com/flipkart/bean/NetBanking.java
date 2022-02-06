@@ -1,7 +1,7 @@
 package com.flipkart.bean;
 
 /**
- * @author JEDI-02
+ * 
  * NetBanking Class
  */
 public class NetBanking {

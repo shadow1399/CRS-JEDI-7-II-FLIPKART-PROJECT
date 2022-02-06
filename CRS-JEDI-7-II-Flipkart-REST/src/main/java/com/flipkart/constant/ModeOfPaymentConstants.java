@@ -2,7 +2,7 @@ package com.flipkart.constant;
 
 /**
  *
- * @author JEDI-02
+ * Payment Constants
  *
  */
 public enum ModeOfPaymentConstants {

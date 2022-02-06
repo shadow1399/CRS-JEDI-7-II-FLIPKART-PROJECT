@@ -8,7 +8,7 @@ import com.flipkart.exception.StudentNotRegisteredException;
 import com.flipkart.exception.UserAlreadyExistException;
 
 /**
- * @author lenovo
+ * Interface for Student Dao
  *
  */
 public interface StudentDaoInterface {

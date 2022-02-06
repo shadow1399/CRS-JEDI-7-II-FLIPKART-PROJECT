@@ -3,10 +3,7 @@
  */
 package com.flipkart.restController;
 
-/**
- * @author lenovo
- *
- */
+
 
 import javax.validation.ValidationException;
 import javax.validation.constraints.Max;
@@ -47,7 +44,7 @@ import com.flipkart.service.RegistrationOperation;
 
 
 /**
- * @author JEDI - 03
+ * API to perform Student Operations
  *
  */
 

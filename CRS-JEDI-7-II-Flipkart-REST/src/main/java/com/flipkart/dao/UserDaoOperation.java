@@ -11,6 +11,11 @@ import com.flipkart.constant.SQLQueriesConstants;
 import com.flipkart.exception.UserNotFoundException;
 import com.flipkart.utils.DBUtils;
 
+/**
+ * 
+ * Operation Class for User Dao Interface
+ *
+ */
 public class UserDaoOperation implements UserDaoInterface {
 
 	private static Logger logger = Logger.getLogger(UserDaoOperation.class);

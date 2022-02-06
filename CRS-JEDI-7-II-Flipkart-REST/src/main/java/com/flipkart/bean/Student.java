@@ -4,8 +4,8 @@
 package com.flipkart.bean;
 
 /**
- * @author JEDI-02
- * Scholarsihp Class
+ * 
+ * Student Class inheriting from User Class
  */
 public class Student extends User {
 

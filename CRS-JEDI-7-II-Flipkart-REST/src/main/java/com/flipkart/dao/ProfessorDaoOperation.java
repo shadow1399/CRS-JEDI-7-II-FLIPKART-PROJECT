@@ -17,7 +17,7 @@ import com.flipkart.constant.SQLQueriesConstants;
 import com.flipkart.utils.DBUtils;
 
 /**
- * @author JEDI-02
+ * Operation Class for Professor Dao Interface
  *
  */
 public class ProfessorDaoOperation implements ProfessorDaoInterface{

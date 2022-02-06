@@ -4,7 +4,7 @@
 package com.flipkart.exception;
 
 /**
- * @author JEDI-02 Exception to check if the student is registered.
+ *  Exception to check if the student is registered.
  */
 public class StudentNotRegisteredException extends Exception {
 
