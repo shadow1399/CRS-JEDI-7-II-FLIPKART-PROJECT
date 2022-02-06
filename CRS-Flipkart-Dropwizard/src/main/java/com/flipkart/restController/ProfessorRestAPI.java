@@ -30,7 +30,7 @@ public class ProfessorRestAPI {
 	public List<EnrolledStudent> viewEnrolledStudents(
 			@NotNull
 			@QueryParam("profId") String profId) 	{
-		System.out.println(profId);
+		System.out.println(profId + "in this");
 		List<EnrolledStudent> students=new ArrayList<EnrolledStudent>();
 		try
 		{
@@ -55,10 +55,12 @@ public class ProfessorRestAPI {
 		List<Course> courses=new ArrayList<Course>();
 		try
 		{
+			System.out.println("try block");
 			courses=professorInterface.getCourses(profId);	
 		}
 		catch(Exception ex)
 		{
+			System.out.println("catch block");
 			return null;
 		}
 	//	Response.status(201).entity( "").build();

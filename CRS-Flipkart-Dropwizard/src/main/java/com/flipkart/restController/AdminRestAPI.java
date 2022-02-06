@@ -31,10 +31,7 @@ import com.flipkart.exception.UserAlreadyExistException;
 import com.flipkart.service.AdminInterface;
 import com.flipkart.service.AdminOperation;
 
-/**
- * @author arya_
- *
- */
+
 @Path("/admin")
 public class AdminRestAPI {
 	

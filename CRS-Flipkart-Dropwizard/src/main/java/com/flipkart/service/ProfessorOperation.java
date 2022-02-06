@@ -76,6 +76,7 @@ public class ProfessorOperation implements ProfessorInterface {
 		List<EnrolledStudent> enrolledStudents=new ArrayList<EnrolledStudent>();
 		try
 		{
+			System.out.println("operation class");
 			enrolledStudents=professorDaoInterface.getStudents(professorId);
 		}
 		catch(Exception ex)

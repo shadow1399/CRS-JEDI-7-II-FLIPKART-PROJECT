@@ -10,7 +10,6 @@ package com.flipkart.bean;
 public class LoginUser {
 	
 	private String loginId;
-
 	
 	private String password;
 	

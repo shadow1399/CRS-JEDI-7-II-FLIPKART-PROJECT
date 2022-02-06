@@ -3,10 +3,6 @@
  */
 package com.flipkart.restController;
 
-/**
- * @author lenovo
- *
- */
 
 import javax.validation.ValidationException;
 import javax.validation.constraints.Max;

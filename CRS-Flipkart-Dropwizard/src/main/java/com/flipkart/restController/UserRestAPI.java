@@ -29,10 +29,6 @@ import com.flipkart.service.StudentOperation;
 import com.flipkart.service.UserInterface;
 import com.flipkart.service.UserOperation;
 
-/**
- * @author JEDI-02
- *
- */
 
 @Path("/user")
 public class UserRestAPI {
@@ -53,17 +49,16 @@ public class UserRestAPI {
 	@Path("/login")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response loginUser(
-			@Valid LoginUser user) throws ValidationException {
+			@QueryParam("loginId") String loginId,
+			@QueryParam("password") String password) throws ValidationException {
+		System.out.println("hello");
 		try {
-			String userId = user.getLoginId();
-			String password = user.getPassword();
+			String userId = loginId;
+			System.out.println(userId + " "+password);
 			UserInterface userInterface = new UserOperation();
 			boolean loggedin = userInterface.verifyCredentials(userId, password);
-			// 2 cases
-			// true->role->student->approved
 			if (loggedin) {
 				String role = userInterface.getRole(userId);
-//				Role userRole = Role.(role);
 				RoleConstants userRole = RoleConstants.stringToName(role);
 				switch (userRole) {
 				case ADMIN:
@@ -96,6 +91,7 @@ public class UserRestAPI {
 			}
 
 		} catch (UserNotFoundException ex) {
+			System.out.println("hello");
 			return Response.status(500).entity(ex.getMessage()).build();
 		}
 		return null;

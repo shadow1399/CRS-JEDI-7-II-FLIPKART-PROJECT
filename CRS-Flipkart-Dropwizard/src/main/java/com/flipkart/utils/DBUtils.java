@@ -20,7 +20,7 @@ public class DBUtils {
         else {
             try {
             	Properties prop = new Properties();
-            	InputStream inputStream = new FileInputStream("C:\\config.properties");            	
+            	InputStream inputStream = new FileInputStream("C:\\Users\\lenovo\\eclipse-workspace\\CRS-Flipkart-Dropwizard\\src\\main\\java\\com\\config.properties");            	
                 prop.load(inputStream);
                 String driver = prop.getProperty("driver");
                 String url = prop.getProperty("url");
