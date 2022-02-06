@@ -11,7 +11,7 @@ public interface AdminInterface {
 	public boolean addCourse(Course course);
 	public boolean dropCourse(String courseId);
 	public List<Course> getCourses();
-	public void generateReportCard(int semester);
+	public boolean generateReportCard();
 	public List<Student>getStudents();
 	public List<Professor> getProfessors();
 	

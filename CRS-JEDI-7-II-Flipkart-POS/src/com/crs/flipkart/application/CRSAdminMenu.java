@@ -203,7 +203,13 @@ public class CRSAdminMenu {
 		return false;
 	}
 	private void generateReport() {
-		System.out.println("Report Generated");
+		try {
+			adminInterface.generateReportCard();
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
 	}
 	
 	private void viewAllStudents() {

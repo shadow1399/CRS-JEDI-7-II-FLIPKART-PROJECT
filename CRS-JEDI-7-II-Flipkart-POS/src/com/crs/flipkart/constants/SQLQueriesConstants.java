@@ -41,7 +41,8 @@ public class SQLQueriesConstants {
 	public static final String ADD_STUDENT = "insert into student values(?,?,?,?);";
 	public static final String GET_STUDENT_ID="select rollNumber from student where userId = ? ";
 	public static final String IS_APPROVED="select isVerified from student join user as T on student.rollNo = T.userId  where T.email = ?;";
-		
+	public static final String GENERATE_REPORT_CARD="replace into reportcard select rollNo,semester,avg(grade) from semesterregistration group by rollNo,semester";
+	
 	public static final String VERIFY_CREDENTIALS="select password from user where email = ?";
 	public static final String UPDATE_PASSWORD="update user set password=? where email = ? ";
 	public static final String GET_Type="select type from user where email = ? ";

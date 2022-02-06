@@ -202,11 +202,18 @@ public class AdminDaoOperations implements AdminDaoInterface {
 	}
 
 	@Override
-	public void generateReportCard(int semester) {
+	public boolean generateReportCard() {
 		// TODO Auto-generated method stub
 //		System.out.println("Generated Report Card for Semester "+semester);
-		
-		
+		try {
+			statement=connection.prepareStatement(SQLQueriesConstants.GENERATE_REPORT_CARD);
+			statement.executeUpdate();
+			logger.info("Grade Card Generated Successfully!!!");
+			return true;
+		}catch(Exception e) {
+			logger.error(e.getMessage());
+		}
+		return false;
 	}
 
 	

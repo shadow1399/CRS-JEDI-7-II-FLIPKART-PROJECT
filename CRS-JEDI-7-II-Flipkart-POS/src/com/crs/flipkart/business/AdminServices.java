@@ -88,9 +88,16 @@ public class AdminServices implements AdminInterface {
 	}
 
 	@Override
-	public void generateReportCard(int semester) {
+	public boolean generateReportCard() {
 		// TODO Auto-generated method stub
+		try {
+			adminDaoOperation.generateReportCard();
+			return true;
+		}catch(Exception e){
+			System.out.println(e);
+		}
 		
+		return false;
 	}
 
 	@Override

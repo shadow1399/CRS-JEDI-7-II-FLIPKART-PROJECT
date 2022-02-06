@@ -58,7 +58,7 @@ public interface AdminDaoInterface {
 	  * Generate Report Card of all the students of given semester
 	  * @param semester
 	  */
-	public void generateReportCard(int semester);
+	public boolean generateReportCard();
 	
 	/**
 	 * Add the Professor to the System
