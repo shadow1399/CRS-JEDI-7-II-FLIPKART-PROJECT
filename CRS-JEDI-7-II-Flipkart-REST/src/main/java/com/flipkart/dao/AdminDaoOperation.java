@@ -104,7 +104,7 @@ public class AdminDaoOperation implements AdminDaoInterface {
 			
 			String sql = SQLQueriesConstants.ADD_COURSE_QUERY;
 			statement = connection.prepareStatement(sql);
-
+			
 			statement.setString(1, course.getCourseId());
 			statement.setString(2, course.getCourseName());
 			statement.setString(3, course.getInstructorId());
@@ -121,7 +121,7 @@ public class AdminDaoOperation implements AdminDaoInterface {
 
 		} catch (AddCourseException | SQLException se) {
 
-			
+			logger.error(se.getMessage());
 			logger.error("Kindly check your InstructorId or your CourseID.");
 			logger.error("Course not added.......Try again!!");
 

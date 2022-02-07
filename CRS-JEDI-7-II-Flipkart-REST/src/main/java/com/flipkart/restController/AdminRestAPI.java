@@ -23,6 +23,7 @@ import com.flipkart.bean.Professor;
 import com.flipkart.exception.AddCourseException;
 import com.flipkart.exception.CourseNotDeletedException;
 import com.flipkart.exception.CourseNotFoundException;
+import com.flipkart.exception.GradeNotAddedException;
 import com.flipkart.exception.ProfessorNotAddedException;
 import com.flipkart.exception.ProfessorNotDeletedException;
 import com.flipkart.exception.StudentNotFoundForVerificationException;
@@ -138,6 +139,7 @@ public class AdminRestAPI {
 	 * @param studentId 
 	 * @param student Semester
 	 * @return
+	 * @throws GradeNotAddedException 
 	 */
 	@POST
 	@Path("/genReport")
@@ -148,12 +150,14 @@ public class AdminRestAPI {
 			@QueryParam("studentId") String studentId,
 			
 			@NotNull
-			@QueryParam("semester") int studentSem) throws ValidationException{
+			@QueryParam("semester") int studentSem) throws ValidationException, GradeNotAddedException{
 		
 		try {
 			adminOperation.generateReport(studentId,studentSem);
 			return Response.status(201).entity("Generated Report Card for studentId: " + studentId ).build();
 		} catch (StudentNotRegisteredException e) {
+			return Response.status(409).entity(e.getMessage()).build();
+		}catch(GradeNotAddedException e) {
 			return Response.status(409).entity(e.getMessage()).build();
 		}
 						
