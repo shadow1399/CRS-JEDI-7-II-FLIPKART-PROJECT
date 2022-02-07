@@ -14,6 +14,7 @@ import com.flipkart.dao.AdminDaoOperation;
 import com.flipkart.exception.AddCourseException;
 import com.flipkart.exception.CourseNotDeletedException;
 import com.flipkart.exception.CourseNotFoundException;
+import com.flipkart.exception.GradeNotAddedException;
 import com.flipkart.exception.ProfessorNotAddedException;
 import com.flipkart.exception.ProfessorNotDeletedException;
 import com.flipkart.exception.StudentNotFoundForVerificationException;
@@ -142,15 +143,20 @@ public class AdminOperation implements AdminInterface {
 	 */
 	float counter=0.0f,sum=0.0f;
 	@Override
-	public void generateReport(String StudentId, int semester) throws StudentNotRegisteredException  {
+	public void generateReport(String StudentId, int semester) throws StudentNotRegisteredException, GradeNotAddedException  {
 
 		try {
 			HashMap<String, String> gradecrd = adminDaoOperation.fetchGrades(StudentId, semester);
+			
 			if(gradecrd == null) {
 				throw new StudentNotRegisteredException(StudentId);
 			}
+//			
 			gradecrd.forEach((k, v) -> {
 				counter = counter + 1;
+//				if(v==null) {
+//					throw new Exception("Grade Not Added");
+//				}
 				if (v.toString().equals("A".toString()))
 					sum += 4;
 				else if (v.toString().equals("B".toString()))
@@ -160,12 +166,15 @@ public class AdminOperation implements AdminInterface {
 				else
 					sum += 1;
 			});
-			
+//			System.out.println("In generate Report");
 			float CPI = (float)sum/counter;
 			
 			adminDaoOperation.generateReport(semester, StudentId, CPI);
-		} catch (StudentNotRegisteredException  e) {
+		} catch (StudentNotRegisteredException e) {
 			logger.error(e.getMessage());
+			
+		}catch(Exception e) {
+			logger.error("Either Student Not Registered or grades are not added");
 		}
 	}
 

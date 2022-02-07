@@ -7,6 +7,7 @@ import com.flipkart.bean.*;
 import com.flipkart.exception.AddCourseException;
 import com.flipkart.exception.CourseNotDeletedException;
 import com.flipkart.exception.CourseNotFoundException;
+import com.flipkart.exception.GradeNotAddedException;
 import com.flipkart.exception.ProfessorNotAddedException;
 import com.flipkart.exception.ProfessorNotDeletedException;
 import com.flipkart.exception.StudentNotFoundForVerificationException;
@@ -72,8 +73,9 @@ public interface AdminInterface {
 	 * @param semester
 	 * @param userId
 	 * @throws StudentNotRegisteredException
+	 * @throws GradeNotAddedException 
 	 * @throws SQLException 
 	 */
-	void generateReport(String userId, int semester) throws StudentNotRegisteredException;
+	void generateReport(String userId, int semester) throws StudentNotRegisteredException, GradeNotAddedException;
 
 }
