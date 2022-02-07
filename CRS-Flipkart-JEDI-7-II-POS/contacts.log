@@ -1,0 +1,95 @@
+23:28:04,730 ERROR RegistrationDaoOperation,main:241 - Unknown column 'studentId' in 'where clause'
+23:39:53,391 ERROR RegistrationDaoOperation,main:241 - Unknown column 'studentId' in 'where clause'
+10:17:52,394 ERROR RegistrationDaoOperation,main:85 - Parameter index out of range (2 > number of parameters, which is 1).
+10:17:52,458 ERROR RegistrationDaoOperation,main:124 - Cannot add or update a child row: a foreign key constraint fails (`test/semesterregistration`, CONSTRAINT `courseId` FOREIGN KEY (`courseId`) REFERENCES `course` (`courseId`) ON DELETE CASCADE ON UPDATE CASCADE)
+10:20:30,191 ERROR RegistrationDaoOperation,main:124 - Cannot add or update a child row: a foreign key constraint fails (`test/semesterregistration`, CONSTRAINT `courseId` FOREIGN KEY (`courseId`) REFERENCES `course` (`courseId`) ON DELETE CASCADE ON UPDATE CASCADE)
+10:22:18,502 ERROR RegistrationDaoOperation,main:124 - Cannot add or update a child row: a foreign key constraint fails (`test/semesterregistration`, CONSTRAINT `courseId` FOREIGN KEY (`courseId`) REFERENCES `course` (`courseId`) ON DELETE CASCADE ON UPDATE CASCADE)
+10:23:46,121 ERROR RegistrationDaoOperation,main:125 - Cannot add or update a child row: a foreign key constraint fails (`test/semesterregistration`, CONSTRAINT `courseId` FOREIGN KEY (`courseId`) REFERENCES `course` (`courseId`) ON DELETE CASCADE ON UPDATE CASCADE)
+10:37:02,887 ERROR RegistrationDaoOperation,main:125 - 
+10:39:06,148  INFO AdminDaoOperation,main:146 - 1 student approved.
+10:42:32,591 DEBUG UserDaoOperation,main:119 - A   c102
+10:56:44,628  INFO AdminDaoOperation,main:296 - 1 Report Card Generated.
+10:56:44,630  INFO AdminDaoOperation,main:302 - User with userId: naman@gmail.com added.
+11:26:12,166  INFO AdminDaoOperation,main:227 - 1 user added.
+11:26:12,169  INFO AdminDaoOperation,main:233 - User with userId: Alex added.
+11:26:12,205  INFO AdminDaoOperation,main:193 - 1 professor added.
+11:26:12,205  INFO AdminDaoOperation,main:199 - Professor with professorId: Alex added.
+11:27:21,791  INFO AdminDaoOperation,main:114 - 1 course added
+11:27:21,792  INFO AdminDaoOperation,main:120 - Course with courseId: c107 is added to catalog.
+11:29:38,371  INFO UserDaoOperation,main:119 - c107 ->  A
+11:58:26,779 ERROR StudentDaoOperation,main:97 - Duplicate entry 'Hrithvik' for key 1
+12:01:05,688 ERROR StudentDaoOperation,main:98 - User with user id : Hrithvik already exists.
+12:04:06,272 ERROR StudentDaoOperation,main:101 - User with user id : Hrithvik already exists.
+12:07:00,728 ERROR AdminDaoOperation,main:124 - Cannot add or update a child row: a foreign key constraint fails (`test/course`, CONSTRAINT `instructorId` FOREIGN KEY (`instructorId`) REFERENCES `professor` (`professorId`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+12:07:00,728 ERROR AdminOperation,main:87 - Course with courseId null already exist in catalog.
+12:11:58,291 ERROR AdminDaoOperation,main:126 - No Instructor with given instructor ID exists.
+First Add given instructor.
+12:12:49,363 ERROR AdminDaoOperation,main:126 - No Instructor with given instructor ID exists.
+First Add given instructor.
+12:13:07,710 ERROR AdminDaoOperation,main:126 - No Instructor with given instructor ID exists.
+First Add given instructor.
+12:16:12,067 ERROR AdminDaoOperation,main:125 - Kindly check your InstructorId or your CourseID.
+12:16:12,068 ERROR AdminDaoOperation,main:126 - Course not added.......Try again!!
+12:17:02,073  INFO AdminDaoOperation,main:262 - qweqweqwe not found!
+12:17:02,073 ERROR AdminOperation,main:177 - professorId: qweqweqwe not added!
+12:20:57,233  INFO AdminDaoOperation,main:262 - qweqweqwe not found!
+12:20:57,234 ERROR AdminOperation,main:180 - User with userId: qweqweqwe does not exist
+12:21:50,388  INFO AdminDaoOperation,main:262 - qweqweqwe not found!
+12:21:50,390 ERROR AdminOperation,main:178 - User with userId: qweqweqwe does not exist
+12:22:02,048  INFO AdminDaoOperation,main:79 - 0 entries deleted.
+12:22:02,049  INFO AdminDaoOperation,main:81 - wqeqwe not in catalog!
+12:22:02,049 ERROR AdminOperation,main:70 - Course with courseCode: wqeqwe not found.
+12:22:25,283 ERROR AdminDaoOperation,main:307 - Unknown column 'NaN' in 'field list'
+12:22:25,284 ERROR AdminOperation,main:161 - studentName: wqeqweqwe not Registered.
+12:39:44,116  INFO AdminDaoOperation,main:262 - qweqweq not found!
+12:39:44,118 ERROR AdminOperation,main:182 - User with userId: qweqweq does not exist
+12:39:57,683  INFO AdminDaoOperation,main:79 - 0 entries deleted.
+12:39:57,683  INFO AdminDaoOperation,main:81 - wqeqewqweqw not in catalog!
+12:39:57,684 ERROR AdminOperation,main:71 - Course with courseCode: wqeqewqweqw not found.
+12:40:10,494 ERROR AdminDaoOperation,main:307 - Unknown column 'NaN' in 'field list'
+12:40:10,494 ERROR AdminOperation,main:165 - studentName: qweqwe not Registered.
+12:41:31,967 ERROR AdminDaoOperation,main:306 - 
+12:43:00,442 ERROR AdminDaoOperation,main:306 - Either Student Not Registered or grades not added.
+12:43:51,528 ERROR RegistrationDaoOperation,main:125 - 
+12:44:13,397 ERROR RegistrationDaoOperation,main:125 - 
+12:48:30,410 ERROR RegistrationDaoOperation,main:125 - 
+14:32:09,131 ERROR AdminDaoOperation,main:273 - Cannot delete or update a parent row: a foreign key constraint fails (`test/course`, CONSTRAINT `instructorId` FOREIGN KEY (`instructorId`) REFERENCES `professor` (`professorId`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+14:32:09,133 ERROR AdminOperation,main:182 - Professor with professorId: kapil1 can not be deleted.
+14:32:52,454  INFO AdminDaoOperation,main:262 - qweqeqwe not found!
+14:32:52,454 ERROR AdminOperation,main:182 - User with userId: qweqeqwe does not exist
+19:07:02,490 ERROR AdminDaoOperation,main:273 - Cannot delete or update a parent row: a foreign key constraint fails (`test/course`, CONSTRAINT `instructorId` FOREIGN KEY (`instructorId`) REFERENCES `professor` (`professorId`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+19:07:02,493 ERROR AdminOperation,main:182 - Professor with professorId: kapil1 can not be deleted.
+19:08:53,729  INFO AdminDaoOperation,main:269 - Professor with professorId: kapil1 deleted.
+19:10:32,551 ERROR StudentDaoOperation,main:104 - 
+19:16:18,906 ERROR StudentDaoOperation,main:104 - 
+19:16:18,915 ERROR RegistrationDaoOperation,main:196 - Can not issue data manipulation statements with executeQuery().
+19:18:40,065 ERROR StudentDaoOperation,main:104 - 
+19:18:40,068 ERROR RegistrationDaoOperation,main:185 - No such course exists.
+19:28:32,403  INFO AdminDaoOperation,main:114 - 1 course added
+19:28:32,405  INFO AdminDaoOperation,main:120 - Course with courseId: c111 is added to catalog.
+19:28:46,150  INFO AdminDaoOperation,main:114 - 1 course added
+19:28:46,151  INFO AdminDaoOperation,main:120 - Course with courseId: c112 is added to catalog.
+19:29:54,138 ERROR StudentDaoOperation,main:77 - 
+19:32:50,986 ERROR StudentDaoOperation,main:79 - 
+19:33:20,991 ERROR StudentDaoOperation,main:77 - You cannot register for more than 6 courses.
+19:36:02,299 ERROR StudentDaoOperation,main:77 - You cannot register for more than 6 courses.
+19:40:39,315  INFO UserDaoOperation,main:119 - c107 ->  A
+19:42:01,838  INFO UserDaoOperation,main:119 - c101 ->  A
+19:42:54,238  INFO UserDaoOperation,main:119 - c103 ->  A
+19:45:58,411  INFO UserDaoOperation,main:119 - c101 ->  B
+19:46:37,297  INFO UserDaoOperation,main:119 - c103 ->  B
+19:47:53,785  INFO AdminDaoOperation,main:297 - 1 Report Card Generated.
+19:47:53,785  INFO AdminDaoOperation,main:303 - User with userId: shubham@gmail.com added.
+19:51:42,509  INFO AdminDaoOperation,main:297 - 1 Report Card Generated.
+19:51:42,511  INFO AdminDaoOperation,main:303 - User with userId: shubham@gmail.com added.
+19:54:38,791 DEBUG AdminOperation,main:164 - 3.1666667
+19:54:38,793 DEBUG AdminDaoOperation,main:293 - 3.1666667
+19:54:38,921  INFO AdminDaoOperation,main:298 - 1 Report Card Generated.
+19:54:38,921  INFO AdminDaoOperation,main:304 - User with userId: shubham@gmail.com added.
+19:59:26,146 DEBUG AdminOperation,main:164 - 3.1666667
+19:59:26,149 DEBUG AdminDaoOperation,main:293 - 3.1666667
+19:59:26,261  INFO AdminDaoOperation,main:298 - 1 Report Card Generated.
+19:59:26,261  INFO AdminDaoOperation,main:304 - User with userId: shubham@gmail.com added.
+17:58:02,693 ERROR AdminDaoOperation,main:125 - Kindly check your InstructorId or your CourseID.
+17:58:02,720 ERROR AdminDaoOperation,main:126 - Course not added.......Try again!!
+22:58:56,390  INFO AdminDaoOperation,main:147 - 1 student approved.
